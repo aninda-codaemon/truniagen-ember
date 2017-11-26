@@ -1,0 +1,11 @@
+html{height:100%;}
+body .container{max-width:81.25rem;}
+.basic-container{text-align:center;padding:3.5rem 0;}
+@media screen and (max-width:767px){.basic-container{padding:2rem 0;}}
+.basic-container.large-container{padding:6rem 0;}
+@media screen and (max-width:767px){.basic-container.large-container{padding:4rem 0;}}
+.checkout-container{text-align:center;padding:3.5rem 0 0;background:#212222;background-image:url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/cieling.jpg);background-repeat:no-repeat;background-size:contain;position:relative;width:100%;}
+.team-section{background:#212222;background-image:url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/cieling.jpg);background-repeat:no-repeat;background-size:contain;position:relative;width:100%;}
+.about-intro-section{background:#fff;background-image:url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/modern-cieling.jpg);background-repeat:no-repeat;background-size:contain;position:relative;width:100%;}
+.hex-divider{position:absolute;top:-25px;left:50%;opacity:0.3;transform:translatex(-50%);}
+.hex-divider.bottom-hex{bottom:-25px;top:initial;}
