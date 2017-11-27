@@ -32,6 +32,9 @@ module.exports = function(defaults) {
   app.import('vendor/js/jquery.validationEngine-en.js');
   app.import('vendor/js/checkout-js.js');
   app.import('vendor/js/common.js');
+  // app.import('vendor/js/leadflows.js');
+  app.import('vendor/js/analytics.js');
+
 
   // If you need to use different assets in different
   // environments, specify an object as the first parameter. That

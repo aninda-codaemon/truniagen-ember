@@ -1,0 +1,1 @@
+$(document).ready(function(e){var $scrollTopBtn=$('#scrollTop-btn');var $panelToggle=$('.panel-toggle');$panelToggle.click(function(e){$(this).toggleClass('active');var $target=$(this).attr('href');$($target).toggleClass('expanded');e.preventDefault();});$scrollTopBtn.click(function(){$('html, body').animate({scrollTop:0},{duration:700,easing:"easeOutExpo"});});});
