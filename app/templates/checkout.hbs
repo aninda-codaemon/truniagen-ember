@@ -1,1 +1,43 @@
-{{outlet}}
+<div id="overlay" class="transparent"></div>
+  <div class="checkout-container padding-0" id="subscribe_checkout">
+      <!--<img src="//cdn.shopify.com/s/files/1/2080/3513/files/small-hex_large.png?v=1497260286" class="hex-divider top-hex">-->
+      <div class="row nav">
+        <div class="large-4 medium-5 columns">
+            <a href="<?php echo base_url(); ?>">
+                <img class="img-responsive logo" src="https://cdn.shopify.com/s/files/1/1301/2801/files/fulllogo-white.svg" alt="TruNiagen" title="TruNiagen" />
+            </a>
+        </div>
+        <div class="large-5 medium-7 columns">
+          <ul class="site-nav site-nav--init" id="AccessibleNav">
+            <li class="site-nav__item site-nav__expanded-item">
+              <a href="<?php echo base_url().'who_we_are/?source=checkout';?>" class="site-nav__link">
+                	Who we are
+              </a>
+            </li>
+            <li class="site-nav__item site-nav__expanded-item">
+              <a href="<?php echo base_url().'science';?>">Science</a>
+            </li>
+            <li class="site-nav__item site-nav__expanded-item">
+              <a href="<?php echo SHOPIFY_SERVER_BASE_URL ?>/account" class="site-nav__link">
+                        Log in
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="checkout-intro container" id="checkout-intro">
+      <h1>Subscribe Today</h1>
+    </div>
+    
+      <!-- Checkout Body Content -->
+  </div>
+
+  {{home-footer}}
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          if (!$('body').hasClass('landing-page')){
+              $('body').addClass('landing-page')
+          }
+      });
+  </script>

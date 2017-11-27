@@ -23,7 +23,8 @@ module.exports = function(defaults) {
   app.import('vendor/css/_containers.css');
   app.import('vendor/css/style_about.css');
   app.import('vendor/css/_purchase.css');
-
+  app.import('vendor/css/_checkout.css');
+  
   app.import('vendor/js/jquery-1.11.1.min.js');
   app.import('vendor/js/bootstrap.min.js');
   app.import('vendor/js/jquery.form.js');
