@@ -1,0 +1,1770 @@
+
+body {
+  font-family: "freight-sans-pro",sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+
+/*== Common == */
+a:hover,a:focus,.a:active {
+    text-decoration: none;
+    outline: none !important;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "ff-meta-serif-web-pro",serif;
+  font-weight: 700;
+  color: #212222;
+}
+.no-padding {padding: 0px !important;}
+
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.theme-color {
+    color: #0fb0c8 !important;
+}
+
+.hex-divider {
+    position: relative;
+    top: -30px;
+    left: 49.9%;
+    transform: translatex(-50%);
+}
+
+
+/*== Border == */
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#top {
+    top: 0;
+}
+
+#bottom {
+    bottom: 0;
+}
+
+#left, #right {
+    top: 0;
+    bottom: 0;
+    width: 15px;
+}
+
+#top, #bottom {
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+
+#top, #bottom, #left, #right {
+    background: #212222;
+    position: fixed;
+    z-index: 999;
+}
+
+
+/*== Typography == */
+
+
+
+/*== Buttons == */
+
+
+
+/* == Header == */
+.custom-header {
+    color: #272828;
+    padding: 67px 0 50px;
+}
+
+.logo {
+   padding:0 70% 0 0;
+}
+
+.border-and-hex {
+    position: relative;
+    /*padding-bottom: 100px;*/
+}
+.border-and-hex .age-top-left-hex {
+    left: -2px;
+    opacity: 0.6;
+    position: absolute;
+    top: -426px;
+    width: 37%;
+    z-index: -1;
+    display:none;
+}
+
+.header-content {
+    padding-bottom: 100px;
+}
+
+.header-content h1 {
+    font-size: 62px;
+    font-weight: 700;
+    color: #272828;
+    text-align: center;
+    font-family:"ff-meta-serif-web-pro",serif;
+    letter-spacing:2px;
+}
+
+.header-content p {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #212222;
+    opacity:0.6;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.top-left-hex {
+    position: fixed;
+    opacity: 0.6;
+    top: -190px;
+    left: -2px;
+    z-index: -1;
+    width: 37%;
+}
+
+.top-right-hex {
+    position: fixed;
+    opacity: 0.6;
+    top: -8px;
+    right: -8px;
+    z-index: -1;
+    width: 38.5%;
+}
+
+
+
+/* == Navigation == */
+.custom-nav {
+    padding-top:16px;
+}
+.custom-nav li {
+    display: inline-block;
+    padding: 0px 10px;
+    border-right: 1px solid #ccc;
+    margin-top: 0px;
+    line-height:1;
+}
+
+.custom-nav li:last-child {
+    border-right: 0;
+    padding-right:0px;
+}
+
+.custom-nav li:last-child a {padding-right:0px;}
+
+.custom-nav li a {
+    font-size: 16px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #272828;
+    padding: 0 15px;
+}
+
+.nav-alignment {
+    text-align: right;
+}
+
+
+
+/* == Advisory Board == */
+.advisory-board {
+    background: #212222 url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/cieling.jpg?2162912659633137710) center top no-repeat;
+    background-size: contain;
+}
+
+.advisory-board h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+}
+
+.advisory-board p {
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: 1.8px;
+    font-weight: 600;
+    color: #fff;
+    opacity:0.4;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.scientist-image {
+    display: block;
+    height: 218px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 218px;
+    z-index: 1;
+}
+
+.scientist-bg-hex {
+    left: 15%;
+    opacity: 0.4;
+    position: absolute;
+    top: -16px;
+    width: 209px;
+    z-index: -1;
+}
+
+.advisory-board .scientists {
+    margin-top: 20px;
+    margin-bottom:20px;
+    display:block;
+}
+
+.advisory-board .scientists h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color:#fff;
+    margin-top:20px;
+}
+
+.advisory-board .scientists p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+}
+
+.advisory-board .scientists span {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing:2px;
+}
+
+/* == Team == */
+.team {
+    background: #212222;
+}
+
+.team h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.team-member {
+    margin-top: 20px;
+    display:block;
+}
+
+.team-member h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #bebebe;
+    text-align: center;
+    margin-top:20px;
+}
+
+.team-member h6 {
+    color: #fff;
+    font-size: 16px;
+    opacity:0.3;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 20px;
+    padding: 0 20px;
+    margin:0 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.team-member p {
+    color: #fff;
+    font-size: 14px;
+    opacity:0.3;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 20px;
+    padding: 0 20px;
+    margin:0 0 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.team-member-image {
+    display: block;
+    height: 218px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 218px;
+    z-index: 1;
+}
+
+.team-member-hex {
+    left: 15%;
+    opacity: 0.4;
+    position: absolute;
+    top: -16px;
+    width: 209px;
+    z-index: -1;
+}
+
+/* == Age Better == */
+.age-better {
+    background: transparent;
+    padding-bottom:40px;
+}
+
+.age-better h1 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #272828;
+    text-align: center;
+    margin-top: 0;
+    line-height:52px;
+}
+
+.age-better p {
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #606161;
+    text-align: center;
+}
+
+.custom-btn {
+    background: transparent;
+    padding: 12px 40px;
+    color: #272828;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: #aeaeae solid 2px;
+    border-radius: 0;
+    margin-top: 30px;
+}
+
+.custom-btn:hover {
+    background: #0fb0c8;
+    color: #FFF;
+    border: #0fb0c8 solid 2px;
+}
+
+
+/* == Footer == */
+.footer {
+    background: #272828;
+    padding: 50px 0 20px;
+}
+
+.custom-footer-nav {
+    text-align: right;
+    margin-top: 7px;
+}
+
+.custom-footer-nav li {
+    display: inline-block;
+}
+
+.custom-footer-nav li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 10px;
+    padding: 0 15px;
+}
+
+.custom-footer-nav li a:hover {
+    color: #0fb0c8;
+}
+
+.footer .footer-content p {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+    opacity: 0.5;
+}
+.footer .footer-content p .full-disclaimer a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+.footer .footer-content .full-disclaimer {
+    border: 1px solid rgba(6, 173, 197, 0.5);
+    padding:10px;
+    display:block;
+    width:auto;
+}
+
+.footer-content a {
+    color: #7a7b7b;
+}
+
+.footer .footer-content p a{
+    color:#06adc5;
+}
+
+ .footer-content a:hover {
+    color: #0fb0c8;
+}
+
+.terms-and-privacy {
+    text-align: right;
+}
+
+.terms-and-privacy li {
+    display: inline-block;
+}
+
+.terms-and-privacy li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    line-height: 1.2;
+    opacity: 0.5;
+    padding: 0 15px;
+}
+
+.terms-and-privacy li a:hover {
+    color: #0fb0c8;
+}
+
+.footer-border {
+    border: #7a7b7b solid 1px;
+}
+
+
+/* == Responsive == */
+@media (min-width: 768px) {
+    
+}
+
+@media (max-width: 480px) {
+    #left, #right {
+        top: 0;
+        bottom: 0;
+        width: 5px;
+    }
+
+    #top, #bottom {
+        left: 0;
+        right: 0;
+        height: 5px;
+    }
+    
+    .custom-header {
+        padding: 30px 0;
+    }
+    
+    .logo {
+        margin: 0 auto;
+    }
+    
+    .nav-alignment {
+        text-align: center;
+    }
+    
+    .custom-nav {
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    .custom-nav li {
+        padding: 0;
+    }
+    
+    .custom-nav li a {
+        font-size: 11px;
+        padding: 0 10px;
+    }
+    
+    .header-content h1 {
+        font-size: 38px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    
+    .advisory-board h1 {
+        font-size: 30px;
+    }
+
+    .advisory-board p {
+        font-size: 12px;
+        line-height: 24px;
+        margin-top: 10px;
+    }
+
+}
+
+/* Terms of use page css starts here */
+.terms .header-content h1 {
+    font-size: 62px;
+    font-weight: 700;
+    color: #272828;
+    text-align: center;
+    font-family: "ff-meta-serif-web-pro",serif;
+    letter-spacing: 2px;
+    margin: 20px 0 70px;
+}
+.header-content .terms-sec {
+    background:#fff;
+    padding:40px;
+    -webkit-box-shadow: 0px 0px 52px -3px rgba(214,214,214,1);
+    -moz-box-shadow: 0px 0px 52px -3px rgba(214,214,214,1);
+    box-shadow: 0px 0px 52px -3px rgba(214,214,214,1);
+}
+.header-content .terms-sec p {
+    font-size: 1.7rem;
+    color: #212222;
+    opacity: 0.8;
+    text-transform: none;
+    font-weight: normal;
+    text-align: left;
+    margin: 0 0 25px;
+    letter-spacing: initial;
+    font-family: "freight-sans-pro",sans-serif;
+    line-height: 26px;
+    padding:0;
+}
+.header-content .terms-sec ul {
+    list-style-type: square;
+    margin: 0;
+    padding: 0 0 0 15px;}
+.header-content .terms-sec ul li {
+    font-size: 1.7rem;
+    color: #212222;
+    opacity: 0.8;
+    text-transform: none;
+    font-weight: normal;
+    text-align: left;
+    margin: 0 0 25px;
+    letter-spacing: initial;
+    font-family: "freight-sans-pro",sans-serif;
+    line-height: 26px;
+    padding:0;
+}
+.header-content .terms-sec a {color:#06ADC5;}
+.header-content .terms-sec a:hover {color:#0595a9;}
+
+@media screen and (max-width: 767px) {
+    .header-content .terms-sec {width:96%; margin:0 auto;}
+}
+/* Terms of use page css ends here */
+
+/* Faq page css starts here */
+.faq .header-content h1 {
+    color: #272828;
+    font-family: "ff-meta-serif-web-pro",serif;
+    font-size: 62px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.faq .header-content p {
+    color: #212222;
+    font-size: 20px;
+    font-family: "freight-sans-pro",sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 30px;
+    margin-top: 20px;
+    opacity: 0.6;
+    text-align: center;
+    text-transform: uppercase;
+    padding:0;
+}
+.faq-sec {padding:40px 0 0;}
+
+.faq-sec .accordion p {
+  padding:1em 1em 1em 4em;
+  color: #212222;
+  text-align:left;
+  font-family: "freight-sans-pro",sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: initial;
+  line-height: 30px;
+  margin: 25px 0;
+  opacity: 0.8;
+  text-transform:none;
+}
+
+/* accordion editing */
+.panel-group {
+    margin-bottom: 0;
+}
+.panel-group .panel + .panel {
+    margin-top: 30px;
+}
+.panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: transparent;
+        overflow:visible;
+    }
+
+    .panel-default > .panel-heading {
+        margin); padding:0;
+    }
+
+    .panel-title {
+        font-size: inherit;
+    }
+
+    .panel-title > a {
+        border-radius: 0;
+        border-color: transparent;
+        -webkit-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        -moz-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        background-color:#272828; 
+        text-align:left;
+        font-size:26px;
+        font-family: "ff-meta-serif-web-pro",serif;
+        font-weight:700; 
+        padding:18px 30px;
+        display:block;
+        text-decoration:none;
+        color:#fff;
+        transition:background-color 0.5s ease-in-out;
+        -webkit-transition:background-color 0.5s ease-in-out;
+        -o-transition:background-color 0.5s ease-in-out;
+        -moz-transition:background-color 0.5s ease-in-out;
+        -ms-transition:background-color 0.5s ease-in-out;
+        border-bottom:1px solid transparent;
+    }
+    .panel-title > a.collapsed {
+        border-radius: 0;
+        border-color: transparent;
+        -webkit-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        -moz-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        background-color:#fff; 
+        text-align:left;
+        font-size:26px;
+        font-family: "ff-meta-serif-web-pro",serif;
+        font-weight:700; 
+        padding:18px 30px;
+        display:block;
+        text-decoration:none;
+        color:#333;
+        transition:background-color 0.5s ease-in-out;
+        -webkit-transition:background-color 0.5s ease-in-out;
+        -o-transition:background-color 0.5s ease-in-out;
+        -moz-transition:background-color 0.5s ease-in-out;
+        -ms-transition:background-color 0.5s ease-in-out;
+        border-bottom:1px solid transparent;
+    }
+    .panel-title > a.collapsed:hover {
+        border-radius: 0;
+        border-color: transparent;
+        -webkit-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        -moz-box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        box-shadow: 0px 0px 27px 0px rgba(214,214,214,1);
+        background-color:#272828; 
+        text-align:left;
+        font-size:26px;
+        font-family: "ff-meta-serif-web-pro",serif;
+        font-weight:700; 
+        padding:18px 30px;
+        display:block;
+        text-decoration:none;
+        color:#fff;
+        transition:background-color 0.5s ease-in-out;
+        -webkit-transition:background-color 0.5s ease-in-out;
+        -o-transition:background-color 0.5s ease-in-out;
+        -moz-transition:background-color 0.5s ease-in-out;
+        -ms-transition:background-color 0.5s ease-in-out;
+        border-bottom:1px solid transparent;
+    }
+
+    .more-less {
+        float: left;
+        color: #212121;
+    }
+    .plus {
+        content: "";
+        background: url("../img/plus-hexa.png") no-repeat center left;
+        background-size: auto;
+        height: 32px;
+        width: 50px;
+        font-size: 1.5em;
+        line-height: 0.5em;
+        float: left;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        transition: -webkit-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+        transition: -webkit-transform 0.5s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out;
+        -ms-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
+}
+    .minus {
+        content: "";
+        background: url("../img/minus-hexa.png") no-repeat center left;
+        background-size: auto;
+        height: 32px;
+        width: 50px;
+        font-size: 1.5em;
+        line-height: 0.5em;
+        float: left;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        transition: -webkit-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+        transition: -webkit-transform 0.5s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out;
+        -ms-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        background-color:#fff;
+        font-size:1em;
+        line-height:1.5em; 
+        margin-bottom:30px;
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(214,214,214,1);
+        -moz-box-shadow: 0px 4px 5px 0px rgba(214,214,214,1);
+        box-shadow: 0px 4px 5px 0px rgba(214,214,214,1);
+        border-top:0 none;
+        padding:0;
+    }
+    .panel-default > .panel-heading + .panel-collapse > .panel-body p {
+    padding:1em 1em 1em 4em;
+    color: #212222;
+    text-align:left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: initial;
+    line-height: 30px;
+    margin: 25px 0;
+    opacity: 0.8;
+    text-transform:none;
+    }
+
+/* end accordion editing */
+
+.animateIn {
+  -webkit-animation: accordionIn 0.45s normal ease-in-out both 1;
+          animation: accordionIn 0.45s normal ease-in-out both 1;
+}
+
+.animateOut {
+  -webkit-animation: accordionOut 0.45s alternate ease-in-out both 1;
+          animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+
+@-webkit-keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+  }
+}
+@keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .header-content .faq-sec {width:96%; margin:0 auto;}
+}
+/* Faq page css ends here */
+
+/* science page css starts here */
+.basic-container {
+    text-align: center;
+    padding: 3.5rem 0;
+}
+.science .hero-section.basic-container {
+    padding-bottom: 15rem;
+    position: relative;
+}
+.science .hero-section .large-text-container {
+    margin-bottom: -46px;
+    text-align:center;
+}
+.science .large-text-container .large-bg-text {
+    font-family: "freight-sans-pro",sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 6rem;
+    letter-spacing: 2px;
+    font-size: 12rem;
+    color: #0a0a0a;
+    opacity: 0.1;
+}
+.science-sub-heading {
+    font-size: 4.6rem;
+    margin: 0;
+    line-height: 1.1;
+}
+.hex-divider-img {
+    position: relative;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.top-box {
+    background: #212222 url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/cieling.jpg) center top no-repeat;
+    background-size: cover;
+}
+.top-box-inner {padding: 0px 0 60px;}
+.top-box-inner h1 {
+    text-align: center;
+    color: #fff;
+    line-height: 7rem;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom:35px;
+}
+.top-box-inner p {
+    color: #fff;
+    text-align: left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 30px;
+    margin: 25px 0;
+    opacity: 0.8;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.nr-view {width:100%; margin:0; background:#fff;}
+.nr-view-cont {padding: 90px 105px 0px 90px;}
+.nr-view-cont h2 {margin:0 0 30px; font-size:3.5rem;}
+.nr-view-cont p {
+    color: #000;
+    text-align: left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 25px 0 0;
+    opacity: 0.9;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.nr-view-cont ul {padding:0 0 0 20px; margin:0;}
+.nr-view-cont ul li {
+    margin:0 0 30px;
+    color: #000;
+    text-align: left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 25px 0;
+    opacity: 0.9;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.study {background:#272828; padding:30px 0; width:100%;}
+.study-cont-table {display:table; padding-left:75px; padding-right:40px;}
+.study-cont-table .study-cont-inner {display:table-cell; vertical-align:middle;}
+.study-cont-table .study-cont-inner h2 {
+    margin:0 0 30px; 
+    font-size:3.5rem;
+    color:#fff;
+}
+.study-cont-table .study-cont-inner p {
+    color: #fff;
+    text-align: left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.5;
+    margin: 25px 0 0;
+    opacity: 0.7;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.study-cont-table .study-cont-inner p:last-child {margin-bottom:0;}
+.study-cont-table .study-cont-inner p a {color:#06ADC5;}
+.study-cont-table .study-cont-inner p a:hover {color:#0595a9;}
+.img-sect {padding:15px;}
+.benefits {
+    background: #fff;
+    background-image: url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/modern-cieling.jpg?1336167…);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    width: 100%;
+    padding:100px 0 0;
+}
+.benefits h1 {
+    text-align: center;
+    line-height: 5rem;
+    font-size: 4.3rem;
+    font-weight: bold;
+    margin:0 0 100px;
+}
+.benefits-inner {padding:0; margin:0;}
+.benefits-inner hr {
+    border-top: 1px solid #dedede;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+.benefits-cont {text-align:center; margin:0; padding: 0 15px;}
+.benefits-cont .image-sec {display:inline-block;height:71px;}
+.benefits-cont p {
+    color: #212222;
+    font-family: "ff-meta-serif-web-pro",serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 25px 0;
+    opacity: 1;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.patents {
+    background-image: url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/library-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 100%;
+    padding:60px 0;
+}
+.patents-lPanel {margin:0; text-align:left;}
+.patents-lPanel h2 {
+    margin:25px 0 30px; 
+    font-size:3.2rem;
+    color: #212222;
+}
+.patents-lPanel p {
+    color: #000;
+    text-align: left;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.4;
+    margin: 25px 0 0;
+    opacity: 0.9;
+    letter-spacing:1px;
+    text-transform: none;
+}
+.patents-rPanel {
+    background: url(https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/patents-bg.png) repeat center center;
+    text-align:center;
+    padding:40px;
+}
+.patents-rPanel .patents-img-sec {display:inline-block;}
+.patents-rPanel h3 {
+    font-size:26px;
+}
+.patents-rPanel p {
+    color: #949393;
+    text-align: center;
+    font-family: "freight-sans-pro",sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 15px 0 0;
+    opacity: 1;
+    letter-spacing:1px;
+    text-transform: uppercase;
+}
+/* science page css ends here */
+/* Faq page css ends here */
+
+@media screen and (max-width: 320px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 16%;}
+    .custom-nav li a {font-size:12px;}
+    .custom-nav li:last-child a {padding-right:10px;}
+    .header-content {padding-bottom:60px;}
+    .header-content h1 {line-height:34px;}
+    .header-content p {line-height:22px; margin-top:10px;}
+    .advisory-board h1 {font-size: 22px; margin: 0; line-height:24px;}
+    .advisory-board p {font-size: 11px; line-height: 16px;}
+    .scientist-bg-hex {left:4%; width:209px;}
+    .advisory-board .scientists h4 {font-size:22px;}
+    .advisory-board .scientists p {font-size:11px; line-height:16px; letter-spacing:0.3px;}
+    .advisory-board .scientists span {letter-spacing:1px;}
+    .team h1 {font-size:32px; margin-top:35px;}
+    .team-member-hex {left:4%; width:209px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 16%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:12px; line-height:28px; padding:0 8px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:28px;}
+    .faq .header-content h1 {font-size:28px;}
+    .faq .header-content p {font-size:16px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 4rem;}
+    .science-sub-heading {font-size: 2rem;}
+    .top-box-inner {padding:0 0 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.2rem;}
+    .top-box-inner p {font-size: 16px; text-align:center;}
+    .nr-view-cont {padding: 60px 15px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.2rem;}
+    .nr-view-cont p {text-align:left; font-size:16px;}
+    .nr-view-cont ul li {font-size: 16px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.2rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:16px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.2rem; margin: 0 0 40px; line-height:3rem;}
+    .benefits-cont {padding:0;}
+    .benefits-cont p {margin: 25px 0 80px; font-size:14px; line-height:20px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 0; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.2rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 16px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:15px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 321px) and (max-width: 359px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 22%;}
+    .custom-nav li a {font-size:14px;}
+    .custom-nav li:last-child a {padding-right:10px;}    
+    .header-content {padding-bottom:60px;}
+    .header-content h1 {line-height:34px;}
+    .header-content p {line-height:22px; margin-top:10px;}
+    .advisory-board h1 {font-size: 26px; margin: 0; line-height:26px;}
+    .advisory-board p {font-size: 12px; line-height: 16px;}
+    .scientist-bg-hex {left:10%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:0.5px;}
+    .advisory-board .scientists span {letter-spacing:1px;}
+    .team h1 {font-size:36px; margin-top:35px;}
+    .team-member-hex {left:10%; width:209px;}
+    .team-member p {padding:0 65px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 24%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:14px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .faq .header-content h1 {font-size:28px;}
+    .faq .header-content p {font-size:18px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 4rem;}
+    .science-sub-heading {font-size: 2rem;}
+    .top-box-inner {padding:0 0 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.2rem;}
+    .top-box-inner p {font-size: 16px; text-align:center;}
+    .nr-view-cont {padding: 60px 15px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.2rem;}
+    .nr-view-cont p {text-align:left; font-size:16px;}
+    .nr-view-cont ul li {font-size: 16px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.2rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:16px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.2rem; margin: 0 0 40px;}
+    .benefits-cont {padding:0;}
+    .benefits-cont p {margin: 25px 0 80px; font-size:14px; line-height:20px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 0; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.2rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 16px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:15px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 360px) and (max-width: 360px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 22%;}
+    .custom-nav li a {font-size:14px;}
+    .custom-nav li:last-child a {padding-right:10px;}    
+    .header-content {padding-bottom:60px;}
+    .header-content h1 {line-height:34px;}
+    .header-content p {line-height:22px; margin-top:10px;}
+    .advisory-board h1 {font-size: 26px; margin: 0; line-height:26px;}
+    .advisory-board p {font-size: 12px; line-height: 16px;}
+    .scientist-bg-hex {left:10%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:0.5px;}
+    .advisory-board .scientists span {letter-spacing:1px;}
+    .team h1 {font-size:36px; margin-top:35px;}
+    .team-member-hex {left:10%; width:209px;}
+    .team-member p {padding:0 65px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 24%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:14px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:32px;}
+    .faq .header-content h1 {font-size:28px;}
+    .faq .header-content p {font-size:18px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 5rem;}
+    .science-sub-heading {font-size: 2.5rem;}
+    .top-box-inner {padding:0 0 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 15px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.5rem; margin: 0 0 40px; line-height:3.5rem;}
+    .benefits-cont {padding:0;}
+    .benefits-cont p {margin: 25px 0 80px; font-size:16px; line-height:24px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 0; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 361px) and (max-width: 480px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 24%;}
+    .custom-nav li a {font-size:14px;}
+    .custom-nav li:last-child a {padding-right:10px;}    
+    .header-content {padding-bottom:60px;}
+    .header-content h1 {line-height:34px;}
+    .header-content p {line-height:22px; margin-top:10px;}
+    .advisory-board h1 {font-size: 26px; margin: 0; line-height:26px;}
+    .advisory-board p {font-size: 12px; line-height: 16px;}
+    .scientist-bg-hex {left:58px; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:0.5px;}
+    .advisory-board .scientists span {letter-spacing:1px;}
+    .team h1 {font-size:36px; margin-top:35px;}
+    .team-member-hex {left:58px; width:209px;}
+    .team-member p {padding:0 65px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 24%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:14px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:32px;}
+    .faq .header-content h1 {font-size:28px;}
+    .faq .header-content p {font-size:18px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 5rem;}
+    .science-sub-heading {font-size: 2.5rem;}
+    .top-box-inner {padding:0 0 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 15px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.5rem; margin: 0 0 40px;}
+    .benefits-cont {padding:0;}
+    .benefits-cont p {margin: 25px 0 80px; font-size:16px; line-height:24px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 0; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 375px) and (max-width: 375px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 24%;}
+    .custom-nav li a {font-size:14px;}
+    .custom-nav li:last-child a {padding-right:10px;}    
+    .header-content {padding-bottom:60px;}
+    .header-content h1 {line-height:34px;}
+    .header-content p {line-height:22px; margin-top:10px;}
+    .advisory-board h1 {font-size: 26px; margin: 0; line-height:26px;}
+    .advisory-board p {font-size: 12px; line-height: 16px;}
+    .scientist-bg-hex {left:12%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:0.3px;}
+    .advisory-board .scientists span {letter-spacing:1px;}
+    .team h1 {font-size:36px; margin-top:35px;}
+    .team-member-hex {left:12%; width:209px;}
+    .team-member p {padding:0 65px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 24%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:14px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 5rem;}
+    .science-sub-heading {font-size: 2.5rem;}
+    .top-box-inner {padding:0 0 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 15px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.5rem; margin: 0 0 40px;}
+    .benefits-cont {padding:0;}
+    .benefits-cont p {margin: 25px 0 80px; font-size:16px; line-height:24px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 0; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+@media screen and (min-width: 414px) and (max-width: 414px) {
+    .top-right-hex {opacity:0.8; width:60%;}
+    .logo {margin: 0 auto 20px; padding: 0 22%;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:16px;}
+    .advisory-board h1 {font-size: 30px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 14px; line-height: 16px;}
+    .scientist-bg-hex {left:15%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:15%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:52px;}
+    .age-better p {font-size:18px;}
+    .ftr-logo {padding: 0 22%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+}
+
+@media screen and (min-width: 480px) and (max-width: 480px) {
+    .scientist-bg-hex {left:19%; width:209px;}
+    .team-member-hex {left:19%; width:209px;}
+}
+
+@media screen and (min-width: 423px) and (max-width: 960px) {
+    .scientist-bg-hex {left:16%; width:209px;}
+    .team-member-hex {left:16%; width:209px;}
+}
+
+@media screen and (min-width: 481px) and (max-width: 640px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px;}
+    .header-content p {line-height:18px; margin-top:10px; font-size:14px;}
+    .advisory-board h1 {font-size: 34px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 15px; line-height: 16px;}
+    .scientist-bg-hex {left:29%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:29%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 32%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:52px;}
+    .faq .header-content h1 {font-size:52px;}
+    .faq .header-content p {font-size:16px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -34px;}
+    .science .large-text-container .large-bg-text {font-size: 5rem;}
+    .science-sub-heading {font-size: 2.5rem;}
+    .top-box-inner {padding: 0 15px 30px;}
+    .top-box-inner h1 {line-height: 3.2rem; font-size: 2.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 30px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:2.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study {padding: 30px 15px;}
+    .study-cont-table {padding-left:0px; padding-right:0px;}
+    .study-cont-table .study-cont-inner h2 {font-size:2.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 2.5rem; margin: 0 0 40px;}
+    .benefits-cont p {margin: 25px 0 80px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 15px; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 2.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 568px) and (max-width: 568px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:18px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:26%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:26%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 32%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .faq .header-content h1 {font-size:32px;}
+    .faq .header-content p {font-size:16px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -36px;}
+    .science .large-text-container .large-bg-text {font-size: 7rem;}
+    .science-sub-heading {font-size: 3.4rem;}
+    .top-box-inner {padding:0 15px 30px;}
+    .top-box-inner h1 {line-height: 4.2rem; font-size: 3.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 30px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:3.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:3.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 3.5rem; margin: 0 0 40px;}
+    .benefits-cont p {margin: 25px 0 80px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 15px; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 3.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding:20px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px; margin-top:0px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:18px; padding:0 40px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:32%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:32%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 32%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:52px;}
+    .faq .header-content h1 {font-size:44px;}
+    .faq .header-content p {font-size:16px;}
+    .science .hero-section.basic-container {padding-bottom: 10rem;}
+    .science .hero-section .large-text-container {margin-bottom: -36px;}
+    .science .large-text-container .large-bg-text {font-size: 7rem;}
+    .science-sub-heading {font-size: 3.4rem;}
+    .top-box-inner {padding:0 15px 30px;}
+    .top-box-inner h1 {line-height: 4.2rem; font-size: 3.5rem;}
+    .top-box-inner p {font-size: 18px; text-align:center;}
+    .nr-view-cont {padding: 60px 30px 30px;}
+    .nr-view-cont h2 {text-align:left; font-size:3.5rem;}
+    .nr-view-cont p {text-align:left; font-size:18px;}
+    .nr-view-cont ul li {font-size: 18px;}
+    .study {padding: 30px 15px;}
+    .study-cont-table {padding-left:0; padding-right:0;}
+    .study-cont-table .study-cont-inner h2 {font-size:3.5rem; text-align:center;}
+    .study-cont-table .study-cont-inner p {text-align:center; font-size:18px;}
+    .img-sect {padding: 0; margin-top: 30px;}
+    .benefits {padding: 40px 0 0;}
+    .benefits h1 {font-size: 3.5rem; margin: 0 0 40px;}
+    .benefits-cont p {margin: 25px 0 80px;}
+    .benefits-inner hr {margin-top:0px;}
+    .patents {padding: 30px 15px; background-size:contain;}
+    .patents-lPanel {text-align:center;}
+    .patents-lPanel h2 {font-size: 3.5rem; line-height: 3.5rem;}
+    .patents-lPanel p {font-size: 18px; text-align: center;}
+    .patents-rPanel {padding: 40px 160px; margin: 60px 0 20px;}
+    .patents-rPanel p {line-height: 1.2; font-size:18px;}
+    .age-better {padding-bottom:0px;}
+    .section-padding {padding-top:0px;}
+}
+    
+@media screen and (min-width: 600px) and (max-width: 600px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:100px;}
+    .header-content h1 {line-height:52px; font-size:52px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:18px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:26%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:26%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 32%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+}
+
+@media screen and (min-width: 667px) and (max-width: 667px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px; margin-top:0px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:18px; padding:0 40px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:30%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:30%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 32%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+    .terms .header-content h1 {font-size:52px;}
+    .faq .header-content h1 {font-size:42px;}
+    .faq .header-content p {font-size:16px;}
+}
+
+@media screen and (min-width: 736px) and (max-width: 736px) {
+    .top-right-hex {opacity:0.8; width:42%;}
+    .top-left-hex {width:40%; top:-218px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 32%;}
+    .custom-nav {text-align: center; padding-left:0;}
+    .custom-nav li a {font-size:16px; padding:0 15px;}
+    .custom-nav li:last-child a {padding-right:15px;}    
+    .header-content {padding-bottom:80px;}
+    .header-content h1 {line-height:52px; font-size:52px; margin-top:0px;}
+    .header-content p {line-height:22px; margin-top:10px; font-size:18px; padding:0 80px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:28px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:32%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:14px; line-height:16px; letter-spacing:1.2px;}
+    .advisory-board .scientists span {letter-spacing:2px;}
+    .team h1 {font-size:42px; margin-top:35px;}
+    .team-member-hex {left:32%; width:209px;}
+    .team-member p {padding:0 85px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding: 0 36%;}
+    .custom-footer-nav {text-align:center;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:34px; padding:0 15px;}
+    .terms-and-privacy {text-align:center;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 10px;}
+    .footer .footer-content p {text-align:center;}
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1023px) {
+    .top-right-hex {opacity:0.8; width:42%; top:3px;}
+    .top-left-hex {width:40%; top:-174px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 16% 0 7%;}
+    .custom-nav {text-align: right; padding-left:0; padding-top:13px;}
+    .custom-nav li a {font-size:16px; padding:0 5px;}
+    .custom-nav li:last-child {padding-right:10px;}
+    .custom-nav li:last-child a {padding-right:5px;}    
+    .header-content {padding-bottom:100px;}
+    .header-content h1 {line-height:62px; font-size:1.1; margin-top:0px;}
+    .header-content p {line-height:24px; margin-top:10px; font-size:19px; padding:0px;}
+    .advisory-board h1 {font-size: 42px; margin: 0; line-height:42px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:-6%; width:209px;}
+    .advisory-board .scientists h4 {font-size:20px;}
+    .advisory-board .scientists p {font-size:13px; line-height:16px; letter-spacing:0.8px;}
+    .advisory-board .scientists span {letter-spacing:1px; font-size:13px;}
+    .team h1 {font-size:42px; margin-top:50px;}
+    .team-member-image {width:auto; height:auto;}
+    .team-member-hex {left:-6%; width:100%;}
+    .team-member h4 {font-size:18px;}
+    .team-member p {padding:0; font-size:13px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding:0 0 0 7%;}
+    .custom-footer-nav {text-align:right; margin-top:0px;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:30px; padding:0 15px;}
+    .terms-and-privacy {text-align:right;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 5px;}
+    .footer .footer-content p {text-align:left; padding-left:15px;}
+    .faq .header-content h1 {font-size:44px;}
+    .faq .header-content p {font-size:18px;}
+    .science .hero-section .large-text-container {margin-bottom: -46px;}
+    .science .large-text-container .large-bg-text {font-size: 10rem;}
+    .science-sub-heading {font-size: 4.8rem;}
+    .top-box-inner {padding: 0px 0 60px;}
+    .top-box-inner h1 {font-size: 4.5rem; line-height: 5.5rem;}
+    .nr-view-cont {padding:60px 40px;}
+    .study {padding:60px 0px;}
+    .study-cont-table {padding-left: 15px; padding-right: 0;}
+    .benefits {padding: 60px 0 0;}
+    .benefits h1 {margin: 0 0 60px;}
+    .benefits-cont {padding: 0 45px;}
+    .benefits-cont p {margin: 25px 0 80px;}
+    .benefits-inner hr {margin-top: 0;}
+    .patents-rPanel {padding: 25px;}
+    .patents-rPanel p {font-size: 14px; line-height: 1.2;}
+}
+
+@media screen and (min-width:1024px) and (max-width:1024px) {
+    .top-right-hex {opacity:0.8; width:42%; top:3px;}
+    .top-left-hex {width:40%; top:-224px; opacity:0.7;}
+    .logo {margin: 0 auto 20px; padding: 0 54% 0 5%;}
+    .custom-nav {text-align: right; padding-left:0; padding-top:13px;}
+    .custom-nav li a {font-size:16px; padding:0 5px;}
+    .custom-nav li:last-child {padding-right:10px;}
+    .custom-nav li:last-child a {padding-right:5px;}    
+    .header-content {padding-bottom:100px;}
+    .header-content h1 {line-height:62px; font-size:1.1; margin-top:0px;}
+    .header-content p {line-height:24px; margin-top:10px; font-size:19px; padding:0px;}
+    .advisory-board h1 {font-size: 38px; margin: 0; line-height:34px;}
+    .advisory-board p {font-size: 17px; line-height: 18px;}
+    .scientist-bg-hex {left:6%; width:209px;}
+    .advisory-board .scientists h4 {font-size:24px;}
+    .advisory-board .scientists p {font-size:13px; line-height:16px; letter-spacing:0px;}
+    .advisory-board .scientists span {letter-spacing:1px; font-size:14px;}
+    .team h1 {font-size:42px; margin-top:50px;}
+    .team-member-image {width:auto; height:auto;}
+    .team-member-hex {left: 6%; width: 209px;}
+    .team-member h4 {font-size:24px;}
+    .team-member p {padding:0; font-size:13px;}
+    .age-better h1 {font-size:72px;}
+    .age-better p {font-size:22px;}
+    .ftr-logo {padding:0;}
+    .custom-footer-nav {text-align:right; margin-top:0px;}
+    .custom-footer-nav ul {padding:0;}
+    .custom-footer-nav li a {font-size:16px; line-height:30px; padding:0 15px;}
+    .terms-and-privacy {text-align:right;}
+    .terms-and-privacy ul {padding:0;}
+    .terms-and-privacy li a {padding:0 5px;}
+    .footer .footer-content p {text-align:left; padding-left:15px;}
+    .faq .header-content h1 {font-size:52px;}
+    .faq .header-content p {font-size:20px;}
+    .science .hero-section .large-text-container {margin-bottom: -56px;}
+    .science-sub-heading {font-size: 5.7rem;}
+    .top-box-inner h1 {font-size: 4.8rem; line-height: 6rem;}
+    .nr-view-cont {padding:60px 40px;}
+    .study {padding: 60px 0;}
+    .study-cont-table {padding-left: 30px; padding-right: 30px;}
+    .benefits-cont {padding: 0;}
+    .benefits-inner .clearfix {display:none;}
+    .patents-rPanel {padding: 20px;}
+    .patents-rPanel p {font-size: 15px; line-height: 1.2;}
+}
+@media screen and (min-width:1025px) {
+    .benefits-inner .clearfix {display:none;}
+}
+
+
+

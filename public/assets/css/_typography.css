@@ -1,0 +1,20 @@
+html{font-size:100%;}
+body{font-family:"freight-sans-pro",sans-serif;font-size:100%;line-height:1.5;color:#212222;padding:0;margin:0;font-weight:normal;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1, h2, h3, h4, h5{font-family:"ff-meta-serif-web-pro",serif;font-weight:700;color:#212222;}
+h1{font-size:3rem;}
+p{font-family:"freight-sans-pro",sans-serif;font-weight:500;font-size:1.2rem;color:#212222;}
+p.subhead{font-family:"freight-sans-pro",sans-serif;color:#212222;text-transform:uppercase;font-weight:500;letter-spacing:1px;font-size:18px;opacity:0.7;line-height:1.5rem;}
+@media screen and (max-width:767px){p.subhead{font-size:16px;opacity:0.7;line-height:1.4rem;}
+}
+a{font-family:"freight-sans-pro",sans-serif;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#06ADC5;}
+a:hover{text-decoration:none;}
+hr{max-width:5rem;height:0;border-top:0;border-bottom:1px solid #212222;margin:2.25rem auto;clear:both;opacity:0.5;}
+.btn{color:#fff;font-weight:700;border:2px solid rgba(255,255,255,0.5);display:inline-block;padding:15px 20px;font-size:1.5rem;}
+.btn:hover{color:#fff;border:2px solid rgba(255,255,255,1);}
+.btn .dark-btn{color:#212222;border:2px solid rgba(33,34,34,0.5);}
+.btn.dark-btn:hover{color:#06ADC5;border:2px solid rgba(33,34,34,1);}
+.large-text-container{text-align:left;margin-bottom:-64px;}
+.large-text-container .large-bg-text{font-family:"freight-sans-pro",sans-serif;font-weight:700;text-transform:uppercase;line-height:6rem;letter-spacing:2px;font-size:7.5rem;opacity:0.1;}
+@media screen and (max-width:767px){.large-text-container .large-bg-text{font-size:4.8rem;line-height:4.5rem;}
+}
+.static-page p{text-align:left;}

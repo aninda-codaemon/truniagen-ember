@@ -1,0 +1,331 @@
+<section class="checkout-content container">
+    <div class="row">
+    <form id="frm_addcust" method="post" action="<?php echo base_url(); ?>checkout/get_customer_info" enctype="multipart/form-data">
+      <!--Left Column-->
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <!--plan col starts-->
+        <div class="form-section">
+            <div class="form-section-title clearfix">
+                <span class="step-number">1</span>
+                <h3>Select Your Plan</h3>
+            </div>
+            <div class="col-md-12">
+
+                <div id="errorMessage" class="alert alert-danger" ></div>
+
+                <div id="successMessage" class="alert alert-success"></div>
+            </div>
+            <!--drop-down code starts-->
+            <div id="plan_info">
+                <div class="form-group">
+                    <label><b>How many bottles would you like?</b></label>
+                    <div class="select-style field field--required">
+                        <select autocomplete="bottletype" data-country-field="1" name="bottletype"
+                            id="bottletype" class="address_info country" onchange="update_cart('apply_product_price');">
+                            <option  value="1"  >1 Bottle (1 month supply)</option>
+                            <option  value="3"  >3 Bottles (3 months supply) - save 15%</option>
+                            <option  value="6"  >6 Bottles (6 months supply) - save 20%</option>
+                            <option  value="12" >12 Bottles (12 months supply) - save 25%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                  <input class="checkbox-custom"
+                         type="checkbox"
+                         onclick="update_cart('apply_shipping_price')"
+                         name="check_free_shipping"
+                         id="check_free_shipping"
+                         value="0" >
+                    >
+                  <label for="check_free_shipping" class="checkbox-custom-label"><b>Subscribe to receive bottles automatically</b></label>
+                </div>
+
+                <p class="customer_sub_line">
+                    Every SUBTYPE month(s), you will receive
+                    <b>SUBTYPE bottle(s)</b> and be billed
+                    <b>ORDER_TOTAL</b>
+                    every <b> </b>
+                </p>
+
+            </div>
+            <!--drop-down code ends-->
+        </div>
+        <!--plan col ends-->
+
+        <!--Shipping col starts-->
+        <div class="form-section">
+          <div class="form-section-title margintop_60 clearfix">
+            <span class="step-number">2</span>
+            <h3>Shipping</h3>
+          </div>
+          <div class="form-content">
+            <div class="form-group">
+              <label><b>Country</b></label>
+              <div class="select-style field field--required">
+                <select autocomplete="shipping country" data-country-field="1" name="country"
+                  id="country" class="address_info country">
+                  <option value="">Select country </option>
+                  <option data-code="US" data-val="231" value="US" selected="selected">United States</option>
+                </select>
+
+                <input type="hidden" name="country_full_name" id="country_full_name" value="United States">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value="<?php echo $this->session->userdata('firstname'); ?>">
+              </div>
+
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value="<?php echo $this->session->userdata('lastname'); ?>">
+              </div>
+            </div>
+
+            <div class="form-group field field--required">
+              <input id="address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="address" autocomplete="shipping address-line1" value="<?php echo $this->session->userdata('shipping_address'); ?>">
+            </div>
+
+            <div class="form-group field field--optional">
+              <input id="alternate_address" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="alternate_address" autocomplete="shipping address-line2" value="<?php echo $this->session->userdata('Shipping_alternate_address'); ?>">
+            </div>
+
+            <div class="form-group field field--optional">
+                <label><b>State</b></label>
+                <div id="content" class="form-group field field--optional">
+                    $this->load->view('checkout/states')
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                <input id="locality" class="form-control address_info" type="text" placeholder="City" size="30" name="city" autocomplete="shipping locality" value="<?php echo $this->session->userdata('Shipping_city'); ?>">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                <input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value="<?php echo isset($order_details['postal_code']) ? $order_details['postal_code'] : '' ; ?>" onblur="update_cart('apply_tax')">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                <input id="email" class="form-control customer_email" type="email" name="email" placeholder="Email" value="<?php echo $this->session->userdata('email'); ?>">
+              </div>
+
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input id="phone_number" class="form-control" type="text" placeholder="Phone number" name="phone_number" value="<?php echo $this->session->userdata('number'); ?>">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Shipping col ends-->
+
+        <!--Payment col starts-->
+        <div id="payment_div" class="form-section">
+            <div class="form-section-title margintop_60 clearfix">
+                <span class="step-number">3</span>
+                <h3>Payment</h3>
+            </div>
+            <div class="form-section-title">
+                <input type="hidden" id="billing_checkbox" name="billing_checkbox" value="1">
+                <input class="checkbox-custom billing-checkbox"
+                       type="checkbox"
+                       name="check_billing_address"
+                       onclick="show_billing_address()"
+                       value="1"
+                       id="check_billing_address" checked>
+                <label for="check_billing_address" class="checkbox-custom-label"><b>My shipping and billing addresses are the same</b></label>
+            </div>
+            <div class="form-content">
+
+                <div class="payment-option">
+                    <div class="row">
+                        <div class="payment-options clearfix">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <label  class="active marginbot-20 auth-active">
+                                    <input type="radio" name="payment_type" id="payment_type" checked value="auth" onclick="showpayment('auth')" style="display:none;">
+                                    <div class="imgbox">
+                                        <img class="img-responsive card" src="https://cdn.shopify.com/s/files/1/1301/2801/files/discover.svg"/>
+                                        <!--<img class="img-responsive card" src="https://cdn.shopify.com/s/files/1/1301/2801/files/amex.svg"/>-->
+                                        <img class="img-responsive card" src="https://cdn.shopify.com/s/files/1/1301/2801/files/mastercard.svg"/>
+                                        <img class="img-responsive card" src="https://cdn.shopify.com/s/files/1/1301/2801/files/visa.svg"/>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <label class="marginbot-20 ppal-active">
+                                    <input type="radio" name="payment_type" id="payment_type" value="paypal" onchange="showpayment('paypal')" style="display:none;">
+                                    <div class="imgbox">
+                                        <img class="img-responsive" src="https://cdn.shopify.com/s/files/1/1301/2801/files/paypal.svg"/>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- (c) 2005, 2016. Authorize.Net is a registered trademark of CyberSource Corporation -->
+                </div>
+                <div class="card-payment m-card-payment box">
+                    if($this->session->flashdata('error')) :
+                        <div id="errorMessage" class="alert alert-danger" >
+                            echo $this->session->flashdata('error');
+                        </div>
+                     endif;
+
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control address_info" type="text" size="30" autocomplete="off" id="first_name_on_card" name="first_name_on_card" placeholder="First name on card">
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control address_info" type="text" size="30" autocomplete="off" id="last_name_on_card" name="last_name_on_card" placeholder="Last name on card">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <input id="card_number" name="card_number" class="form-control address_info card-number" type="text" size="30" placeholder="Card Number" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <label><b>EXPIRATION MONTH</b></label>
+                            <div class="select-style field field--required">
+                                <select class="address_info province" id="month" name="month" placeholder="">
+                                    <option value="">Select Month</option>
+                                    <option value="01">01 (JANUARY)</option>
+                                    <option value="02">02 (FEBUARY)</option>
+                                    <option value="03">03 (MARCH)</option>
+                                    <option value="04">04 (APRIL)</option>
+                                    <option value="05">05 (MAY)</option>
+                                    <option value="06">06 (JUNE)</option>
+                                    <option value="07">07 (JULY)</option>
+                                    <option value="08">08 (AUGUST)</option>
+                                    <option value="09">09 (SEPTEMBER)</option>
+                                    <option value="10">10 (OCTOBER)</option>
+                                    <option value="11">11 (NOVEMBER)</option>
+                                    <option value="12">12 (DECEMBER)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <label><b>EXPIRATION YEAR</b></label>
+                            <div class="select-style field field--required">
+                                <select class="address_info province" id="year" name="year" placeholder="">
+                                    <option value="">Select Year</option>
+                                    <!--for ($i = date('Y')"; $i <= "date('Y')" + 10; $i++) {
+                                        <option data-code="3919" value="echo $i;"> echo $i </option>
+                                     }-->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                            <input class="form-control address_info" type="text" size="30" autocomplete="off" id="cvv" name="cvv" placeholder="CVV">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Payment col ends-->
+
+        <!--Billing col starts-->
+        <div class="form-section billing-section" id="billing_info">
+          <div class="form-section-title margintop_60">
+            <span class="step-number">4</span>
+            <h3>Billing</h3>
+          </div>
+          <div class="col-md-12">
+                <!--<?php if($this->session->flashdata('billing_address_error')) : ?>
+                <div id="errorMessage" class="alert alert-danger" >
+                    <?php echo $this->session->flashdata('billing_address_error'); ?>
+                    <?php $this->session->unset_flashdata('billing_address_error'); ?>
+                </div>
+              <?php endif; ?>-->
+            </div>
+          <div class="form-content">
+
+            <div class="form-group field field--required">
+              <input id="stree_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="billing_address" autocomplete="shipping address-line1" onFocus="geolocate()">
+            </div>
+
+            <div class="form-group field field--optional">
+              <input id="billing_apt" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="billing_apt" autocomplete="shipping address-line2">
+            </div>
+
+            <div class="form-group field field--optional">
+                <label><b>State</b></label>
+                <div id="content" class="form-group field field--optional">
+                    <!--<?php $this->load->view('checkout/billing_states'); ?>-->
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                <input id="billing_city" class="form-control address_info" type="text" placeholder="City" size="30" name="billing_city" autocomplete="shipping locality">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                <input id="billing_postcode" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="billing_postcode" data-zip-field="1" autocomplete="shipping postal-code">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Billing col ends-->
+        <div class="row form-total">
+            <div class="col-md-12"><hr></div>
+        </div>
+        <div class="form-checkboxes">
+            <div class="nl">
+                <input type="hidden" id="news_letter" name="news_letter" value="1">
+                <input class="checkbox-custom nl-checkbox"
+                       type="checkbox"
+                       name="newsletter"
+                       onclick="checked_newsletter()"
+                       value="1"
+                       id="newsletter" checked>
+                <label for="newsletter" class="checkbox-custom-label"><b>RECEIVE OUR MONTHLY NEWSLETTER</b></label>
+            </div>
+        </div>
+        <div class="form-checkboxes">
+            <div class="ts">
+                <input type="hidden" id="terms_conditions" name="terms_conditions" value="1">
+                <input class="checkbox-custom tc-checkbox"
+                       type="checkbox"
+                       name="terms_and_conditions"
+                       onclick="checked_terms_condition()"
+                       value=""
+                       id="terms_and_conditions">
+                <span for="terms_and_conditions" class="checkbox-custom-label tc-text"></span>
+                <b><span data-toggle="modal" data-target="#myModal">I ACCEPT THE TERMS AND CONDITIONS</span></b>
+                <label id="terms_and_conditions-error" class="error" for="terms_and_conditions" style="display:none;"></label>
+            </div>
+        </div>
+
+        <div class="row form-total">
+            <div class="col-md-12"><hr></div>
+            <div class="col-md-9 col-sm-9"><p>TOTAL(USD)</p></div>
+            <div class="col-md-3 col-sm-3"><p class="order_total"><!--<?php echo '$' . $order_details['total']; ?>--></p></div>
+        </div>
+        <div id="end_of_row"></div>
+    </div>
+
+    <!--Right Column-->
+    <div id="cart_div" class="col-lg-4 col-md-4 col-sm-4">
+      <!--<?php
+        //display cart
+        if($this->session->userdata('product')['title']):
+            $this->load->view('checkout/cart_info');
+        endif;
+      ?>-->
+      {{checkout-cart-info}}
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8">
+        <!--submit buttons-->
+        <input class="btn card-payment" type="submit" name="place_order" value="CONFIRM PURCHASE" id="btn_submit">
+        <input class="btn paypal-payment" type="submit" name="go_to_paypal" value="GO TO PAYPAL" id="btn_paypal">
+    </div>
+</form>
+</div>
+</section>

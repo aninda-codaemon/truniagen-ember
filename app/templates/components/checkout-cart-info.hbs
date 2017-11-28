@@ -1,0 +1,107 @@
+<style>
+    .fixed-position{position: fixed;top:15px;width:27.5%;}
+    .ipad-portrait{position: fixed;top:20px;width:29.5%;}
+    .ipad-landscape{position: fixed;top:20px;width:31%;}
+</style>
+<!--  Cart design -------------------->
+<div class="cart-container follow-scroll margin_bottom">
+    <div class="cart-heading">
+        <!--<?php if ($this->uri->segment(2) != "thank_you"): ?>
+            <h3>Order Summary</h3>
+            <?php if($recurring_type == 1) :?>
+            <p  class="sub_line">
+                You will receive
+                <b><?php echo $subtype.' '.$bottle ?></b> and be billed
+                <b><?php echo $order_details['total_sales']?></b>
+                every <b> <?php echo $subtype .' '. $month ;?></b>
+            </p>
+            <?php else:?>
+            <hr>
+            <?php endif;?>
+        <?php else: ?>
+            <h3>Billing  Summary</h3>
+        <?php endif;?>-->
+        <h3>Billing  Summary</h3>
+    </div>
+
+    <div class="cart-content">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6"><p><!--<?php echo $subtype; ?>-->  x Monthly Supply</p></div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 right-column"><p><!--<?php  echo '$'.$total_price; ?>--></p></div>
+        </div>
+        <!--discount div-->
+        <!--<?php if($percent != 0) : ?>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6"><p><?php echo $percent.'%';?> Discount</p></div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 right-column"><p><?php echo '-$'.$discount;  ?></p></div>
+        </div>
+      <?php endif;?>-->
+        <!--discount div ends -->
+        <!-- shipping div starts ---->
+        <div class="row">
+            <div class="col-md-9 col-sm-7 col-xs-7"><p>Shipping</p></div>
+            <div class="col-md-3 col-sm-5 col-xs-5 right-column"><p><?php echo '$' ; echo isset($order_details['shipping_price']) ?  $order_details['shipping_price'] : 0 ?></p></div>
+        </div>
+        <!-- shipping div ends ---->
+        <!--tax div-->
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9"><p>Sales tax </p></div>
+            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-3 right-column"><p><!--<?php echo '$'; echo isset($order_details['tax_price']) ?  $order_details['tax_price'] : 0 ?>--></p></div>
+        </div>
+        <!--tax div ends -->
+
+        <div class="row">
+            <div class="col-md-12"><hr></div>
+        </div>
+        <div class="price-total">
+          <div class="row">
+              <div class="col-md-8 col-sm-7 col-xs-7"><p class="text-blue">TOTAL(USD)</p></div>
+              <div class="col-md-4 col-sm-5 col-xs-5 right-column"><p class="text-blue"><!--<?php echo '$' . $order_details['total_sales']; ?>--></p></div>
+          </div>
+          <!--<?php if($recurring_type == 1) : ?>
+          <div class="row">
+              <div class="col-md-12">
+                  <p class="renew-copy">RENEW ON <span id="date">
+                    <?php
+                        $date = strtotime(date("Y/m/d"));
+                        $date = strtotime($days, $date);
+                        echo date('m/d/Y', $date);
+                    ?>
+                      </span> FOR <?php echo '$' . $order_details['total_sales']; ?></p>
+              </div>
+          </div>
+        <?php endif;?>-->
+        </div>
+    </div>
+</div>
+
+<!--submit buttons-->
+<!--<input class="btn m-card-payment m-btn" type="submit" name="place_order" value="CONFIRM PURCHASE" id="btn_submit">
+<input class="btn m-paypal-payment" type="submit" name="go_to_paypal" value="GO TO PAYPAL" id="btn_paypal">  -->
+<!-- Terms and conditions dialog box ------------------>
+<!--<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center">Terms and Conditions</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="terms-list">
+                <li>Your order will be delivered via UPS or USPS within 5-7 business days. If you select "automatic renewal" your order will renew automatically as follows, until you cancel:</li>
+                <li>For monthly subscriptions your order will repeat every month on the day you originally ordered.</li>
+                <li>For quarterly subscriptions (3 month) your order will repeat every three months on the day you originally ordered.</li>
+                <li>For "bi-annual" subscriptions (6 month) your order will repeat every six months on the day you originally ordered.</li>
+                <li>You can manage your subscription from the "account" section of <a href="https://prohealthspan.com">prohealthspan.com</a>.</li>
+                <li>For any product related inquires please email us at <a href="mailto:info@prohealthspan.com">info@prohealthspan.com</a>.</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>-->
+
+<!--script code starts-->

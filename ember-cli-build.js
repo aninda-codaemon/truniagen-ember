@@ -6,9 +6,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
-    minifyCSS: {
-      options: { processImport: true }
-    }
+    // minifyCSS: {
+    //   options: { processImport: true }
+    // }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -24,7 +24,8 @@ module.exports = function(defaults) {
   app.import('vendor/css/style_about.css');
   app.import('vendor/css/_purchase.css');
   app.import('vendor/css/_checkout.css');
-  
+  app.import('vendor/css/custom_checkout.css');
+
   app.import('vendor/js/jquery-1.11.1.min.js');
   app.import('vendor/js/bootstrap.min.js');
   app.import('vendor/js/jquery.form.js');
@@ -35,6 +36,7 @@ module.exports = function(defaults) {
   app.import('vendor/js/common.js');
   // app.import('vendor/js/leadflows.js');
   app.import('vendor/js/analytics.js');
+  app.import('vendor/js/checkout_scripts.js');
 
 
   // If you need to use different assets in different

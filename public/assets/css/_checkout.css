@@ -64,7 +64,7 @@
     opacity: 1;
     text-transform: uppercase;
     cursor:pointer;}
-
+    
 .ts span.tc-text {color: #fff;
     font-family: "freight-sans-pro",sans-serif;
     font-size: 0.9rem;
@@ -524,7 +524,7 @@ input[type=radio]:checked + .radio-inline{
 #top, #bottom, #left, #right {
   background: #212222;
   position: fixed;
-  z-index: 1000; }
+  z-index: 100; }
 
 #left, #right {
   top: 0;
@@ -553,7 +553,7 @@ input[type=radio]:checked + .radio-inline{
 
 #bottom {
   bottom: 0; }
-.container {
+  .container {
     width: 1170px;
 }
 .container {
@@ -686,7 +686,7 @@ footer {
     color: #fff; }
   footer ul li a {
     color: #fff; }
-
+    
 footer .disclaimer-nav .full-disclaimer {
     border: 1px solid rgba(6, 173, 197, 0.9);
     padding:10px;
@@ -703,7 +703,7 @@ footer .disclaimer-nav ul {margin-bottom:20px;}
       text-align: center; }
     footer ul {
       margin-left: 0;
-      margin-bottom: 0; }
+      margin-bottom: 0; } 
   }
 
 .about-page {width:100%; height:auto; background:#fafafa;}
@@ -3099,7 +3099,7 @@ input:focus{outline: none; border-bottom:1px solid rgba(70, 184, 218, 0.89);}
     }
 
 }
-
+      
   .landing-page .nav ul li a {
     color: #fff; }
     @media screen and (max-width: 736px) {
@@ -3116,7 +3116,7 @@ input:focus{outline: none; border-bottom:1px solid rgba(70, 184, 218, 0.89);}
     @media screen and (max-width: 736px) {
       .landing-page .landing-content h1 {
         font-size: 3rem; } }
-
+    
 @media screen and (min-width: 1024px) {
 
    .landing-page {
@@ -3587,7 +3587,7 @@ input:focus{outline: none; border-bottom:1px solid rgba(70, 184, 218, 0.89);}
    #white-logo {display:none;}
    #gray-logo {display:block !important;}
    .bottom-left-hex {display:block; opacity:0.6; width:40%;}
-   .about-intro-section {padding-top:1.5rem;}
+   .about-intro-section {padding-top:1.5rem;}   
    .payment_640 {width:33.33%;}
    .payment_640 .imgbox {width:88%; display:inline-block; vertical-align:middle;}
    .landing-page {background: url('https://cdn.shopify.com/s/files/1/1301/2801/t/5/assets/landing-bg.jpg') no-repeat center center; background-size: unset; position: relative; width: 100%; height: 100%;}

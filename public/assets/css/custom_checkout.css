@@ -1,0 +1,17 @@
+.error{color:#ff9313;text-transform:none;}
+div.AuthorizeNetSeal{//position:absolute;right:27px;top:48px;}
+.address_info option{border:0px solid #000;background:#e9e9e9;}
+@media(max-width:480px){div.AuthorizeNetSeal{position:relative;right:0;top:0;margin:15px auto;}
+}
+label{position:relative;}
+label{display:inline-block;font-weight:300;margin-bottom:0px !important;}
+.alert-danger{border-radius:0px !important;}
+#state-error , #month-error , #year-error{padding-top:10px;}
+.tos{margin-bottom:16px;}
+.nl{margin-bottom:16px;}
+.nl a{margin-bottom:16px;}
+.hero-section img{display:inline-block;}
+.paypal-payment , #successMessage{display:none;}
+@media screen and (min-width:1024px){.follow-scroll{position:absolute;width:92.5%;}
+}
+.disclaimer-link{color:#06ADC5!important;}

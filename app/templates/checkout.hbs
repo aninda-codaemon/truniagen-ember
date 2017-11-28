@@ -1,43 +1,960 @@
 <div id="overlay" class="transparent"></div>
-  <div class="checkout-container padding-0" id="subscribe_checkout">
-      <!--<img src="//cdn.shopify.com/s/files/1/2080/3513/files/small-hex_large.png?v=1497260286" class="hex-divider top-hex">-->
-      <div class="row nav">
-        <div class="large-4 medium-5 columns">
-            <a href="<?php echo base_url(); ?>">
-                <img class="img-responsive logo" src="https://cdn.shopify.com/s/files/1/1301/2801/files/fulllogo-white.svg" alt="TruNiagen" title="TruNiagen" />
-            </a>
+    <div class="checkout-container padding-0" id="subscribe_checkout">
+        <!--<img src="//cdn.shopify.com/s/files/1/2080/3513/files/small-hex_large.png?v=1497260286" class="hex-divider top-hex">-->
+        <div class="row nav">
+            <div class="large-4 medium-5 columns">
+                <a href="/">
+                    <img class="img-responsive logo" src="assets/images/fulllogo-white.svg" alt="TruNiagen" title="TruNiagen">
+                </a>
+            </div>
+            <div class="large-5 medium-7 columns">
+                <ul class="site-nav site-nav--init" id="AccessibleNav">
+                    <li class="site-nav__item site-nav__expanded-item">
+                        <a href="https://app.truniagen.com/who_we_are/?source=checkout" class="site-nav__link">
+                    Who we are
+                </a>
+                    </li>
+                    <li class="site-nav__item site-nav__expanded-item">
+                        <a href="https://app.truniagen.com/science">Science</a>
+                    </li>
+                    <li class="site-nav__item site-nav__expanded-item">
+                        <a href="https://truniagen.com/account" class="site-nav__link">
+                          Log in
+                </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="large-5 medium-7 columns">
-          <ul class="site-nav site-nav--init" id="AccessibleNav">
-            <li class="site-nav__item site-nav__expanded-item">
-              <a href="<?php echo base_url().'who_we_are/?source=checkout';?>" class="site-nav__link">
-                	Who we are
-              </a>
-            </li>
-            <li class="site-nav__item site-nav__expanded-item">
-              <a href="<?php echo base_url().'science';?>">Science</a>
-            </li>
-            <li class="site-nav__item site-nav__expanded-item">
-              <a href="<?php echo SHOPIFY_SERVER_BASE_URL ?>/account" class="site-nav__link">
-                        Log in
-              </a>
-            </li>
-          </ul>
+
+        <!-- custom css -->
+        <!--<link href="assets/css/custom_checkout.css" rel="stylesheet">-->
+        <!-- google analytics and fb script  -->
+        <script>
+            // Measure adding a product to a shopping cart by using an 'add' actionFieldObject
+            // and a list of productFieldObjects.
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                    'currencyCode': 'USD',
+                    'add': { // 'add' actionFieldObject measures.
+                        'products': [{ //  adding a product to a shopping cart.
+                            'name': 'TRU NIAGEN®: Nicotinamide Riboside (NR) - 3 Month Supply - Save 15%', // Product name (string).
+                            'id': '171298553880', // Product ID (string).
+                            'price': '119.75',
+                            'brand': 'TruNiagen',
+                            'category': 'OneTime',
+                            'variant': 'Vr TRU NIAGEN®: Nicotinamide Riboside (NR) - 3 Month Supply - Save 15%', // Product variant (string).
+                            'quantity': '1'
+                        }]
+                    }
+                }
+            });
+        </script>
+        <script>
+            /**
+             * A function to handle a click on a checkout button. This function uses the eventCallback
+             * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
+             */
+            dataLayer.push({
+                'event': 'checkout',
+                'ecommerce': {
+                    'checkout': {
+                        'actionField': {
+                            'step': 1,
+                            'option': 'Visa'
+                        },
+                        'products': [{
+                            'name': 'TRU NIAGEN®: Nicotinamide Riboside (NR) - 3 Month Supply - Save 15%', // Product name (string).
+                            'id': '171298553880', // Product ID (string).
+                            'price': '119.75',
+                            'brand': 'TruNiagen',
+                            'category': 'OneTime',
+                            'variant': 'Vr TRU NIAGEN®: Nicotinamide Riboside (NR) - 3 Month Supply - Save 15%', // Product variant (string).
+                            'quantity': '1'
+                        }]
+                    }
+                },
+            });
+        </script>
+        <!--
+<link rel="stylesheet" type="text/css" href="https://api.addressy.com/css/address-3.50.css" />
+<script type="text/javascript" src="https://api.addressy.com/js/address-3.50.js"></script>
+-->
+        <div class="checkout-container padding-0" id="subscribe_checkout">
+            <img src="assets/images/small-hex_large_6ce8b6b28c380ad81c74bb9710e00072 Copy.png" alt="" class="hex-divider top-hex">
+            <div class="checkout-intro" id="checkout-intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Subscribe Today</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="checkout-content">
+                <div class="container">
+                    <div class="row">
+                        <form id="frm_addcust" method="post" action="https://app.truniagen.com/checkout/get_customer_info" enctype="multipart/form-data" novalidate="novalidate">
+                            <!--Left Column-->
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <!--plan col starts-->
+                                <div class="form-section">
+                                    <div class="form-section-title clearfix">
+                                        <!--<span class="step-number">1</span>-->
+                                        <h3>Select Your Plan</h3>
+                                        <p class="form-subhead-bdr"></p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div id="successMessage" class="alert alert-success"></div>
+                                    </div>
+                                    <!--drop-down code starts-->
+                                    <div id="plan_info">
+                                        <div class="form-group">
+                                            <label><b>How many bottles would you like?</b></label>
+                                            <div class="select-style field field--required">
+                                                <select autocomplete="bottletype" data-country-field="1" name="bottletype" id="bottletype" class="address_info country" onchange="update_cart(&#39;apply_product_price&#39;);">
+                                                    <option value="1">1 Bottle (1 month supply)</option>
+                                                    <option value="3" selected="">3 Bottles (3 months supply) - save 15%</option>
+                                                    <option value="6">6 Bottles (6 months supply) - save 20%</option>
+                                                    <option value="12">12 Bottles (12 months supply) - save 25%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input class="checkbox-custom" type="checkbox" onclick="update_cart(&#39;apply_shipping_price&#39;)" name="check_free_shipping" id="check_free_shipping" value="1">
+                                        <label for="check_free_shipping" class="checkbox-custom-label"><b>Subscribe to receive bottles automatically</b></label>
+
+                                        <p class="customer_sub_line">
+                                            You will receive <b>3 bottles</b> and be billed
+                                            <b>$119.75.</b>
+                                        </p>
+                                    </div>
+                                    <!--drop-down code ends-->
+                                </div>
+                                <!--plan col ends-->
+                                <!--Shipping col starts-->
+                                <div class="form-section">
+                                    <div class="form-section-title margintop_60 clearfix">
+                                        <!--<span class="step-number">2</span>-->
+                                        <h3>Shipping</h3>
+                                        <p class="form-subhead-bdr"></p>
+                                    </div>
+                                    <div class="form-content">
+                                        <div class="form-group">
+                                            <!--<label><b>Country</b></label> -->
+                                            <!--<div class="select-style field field--required">
+                    <select autocomplete="shipping country" data-country-field="1" name="country"
+                      id="country1" class="address_info country">
+                      <option value="">Select country</option>
+                      <option data-code="US" data-val="231" value="US" selected="selected">United States</option>
+                    </select>
+                    <input type="hidden" name="country_full_name" id="country" value="United States">
+                  </div>-->
+                                            <input type="hidden" name="country" id="country1" value="US">
+                                            <input type="hidden" name="country_full_name" id="country" value="United States">
+                                            <input type="hidden" name="function_name" id="function_name" value="checkout">
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                <input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value="">
+                                            </div>
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                <input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group field field--required">
+                                            <input id="street_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="address" autocomplete="shipping address-line1" value="" onblur="checkup()">
+                                        </div>
+                                        <div class="form-group field field--optional">
+                                            <input id="alternate_address" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="alternate_address" autocomplete="shipping address-line2" value="">
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                                                <input id="locality" class="form-control address_info" type="text" placeholder="City" size="30" name="city" autocomplete="shipping locality" value="">
+                                            </div>
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                                                <input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value="" onblur="update_cart(&#39;apply_tax&#39;)">
+                                            </div>
+                                        </div>
+                                        <div class="form-group field field--optional">
+                                            <label><b>State</b></label>
+                                            <div id="content" class="form-group field field--optional">
+
+                                                <div class="form-group field field--required">
+                                                    <div class="select-style">
+                                                        <select placeholder="Ontario" name="state" id="administrative_area_level_1" class="address_info province">
+                                                            <option value="">Select State</option>
+
+                                                            <option value="Alabama" data-code="3919">
+                                                                Alabama </option>
+
+                                                            <option value="Alaska" data-code="3920">
+                                                                Alaska </option>
+
+                                                            <option value="Arizona" data-code="3921">
+                                                                Arizona </option>
+
+                                                            <option value="Arkansas" data-code="3922">
+                                                                Arkansas </option>
+
+                                                            <option value="California" data-code="3924">
+                                                                California </option>
+
+                                                            <option value="Colorado" data-code="3926">
+                                                                Colorado </option>
+
+                                                            <option value="Connecticut" data-code="3927">
+                                                                Connecticut </option>
+
+                                                            <option value="Delaware" data-code="3928">
+                                                                Delaware </option>
+
+                                                            <option value="Florida" data-code="3930">
+                                                                Florida </option>
+
+                                                            <option value="Georgia" data-code="3931">
+                                                                Georgia </option>
+
+                                                            <option value="Hawaii" data-code="3932">
+                                                                Hawaii </option>
+
+                                                            <option value="Idaho" data-code="3933">
+                                                                Idaho </option>
+
+                                                            <option value="Illinois" data-code="3934">
+                                                                Illinois </option>
+
+                                                            <option value="Indiana" data-code="3935">
+                                                                Indiana </option>
+
+                                                            <option value="Iowa" data-code="3936">
+                                                                Iowa </option>
+
+                                                            <option value="Kansas" data-code="3937">
+                                                                Kansas </option>
+
+                                                            <option value="Kentucky" data-code="3938">
+                                                                Kentucky </option>
+
+                                                            <option value="Louisiana" data-code="3939">
+                                                                Louisiana </option>
+
+                                                            <option value="Maine" data-code="3941">
+                                                                Maine </option>
+
+                                                            <option value="Maryland" data-code="3942">
+                                                                Maryland </option>
+
+                                                            <option value="Massachusetts" data-code="3943">
+                                                                Massachusetts </option>
+
+                                                            <option value="Michigan" data-code="3945">
+                                                                Michigan </option>
+
+                                                            <option value="Minnesota" data-code="3946">
+                                                                Minnesota </option>
+
+                                                            <option value="Mississippi" data-code="3947">
+                                                                Mississippi </option>
+
+                                                            <option value="Missouri" data-code="3948">
+                                                                Missouri </option>
+
+                                                            <option value="Montana" data-code="3949">
+                                                                Montana </option>
+
+                                                            <option value="Nebraska" data-code="3950">
+                                                                Nebraska </option>
+
+                                                            <option value="Nevada" data-code="3951">
+                                                                Nevada </option>
+
+                                                            <option value="New Hampshire" data-code="3952">
+                                                                New Hampshire </option>
+
+                                                            <option value="New Jersey" data-code="3953">
+                                                                New Jersey </option>
+
+                                                            <option value="New Mexico" data-code="3955">
+                                                                New Mexico </option>
+
+                                                            <option value="New York" data-code="3956">
+                                                                New York </option>
+
+                                                            <option value="North Carolina" data-code="3957">
+                                                                North Carolina </option>
+
+                                                            <option value="North Dakota" data-code="3958">
+                                                                North Dakota </option>
+
+                                                            <option value="Ohio" data-code="3959">
+                                                                Ohio </option>
+
+                                                            <option value="Oklahoma" data-code="3960">
+                                                                Oklahoma </option>
+
+                                                            <option value="Oregon" data-code="3962">
+                                                                Oregon </option>
+
+                                                            <option value="Pennsylvania" data-code="3963">
+                                                                Pennsylvania </option>
+
+                                                            <option value="Rhode Island" data-code="3965">
+                                                                Rhode Island </option>
+
+                                                            <option value="South Carolina" data-code="3966">
+                                                                South Carolina </option>
+
+                                                            <option value="South Dakota" data-code="3967">
+                                                                South Dakota </option>
+
+                                                            <option value="Tennessee" data-code="3969">
+                                                                Tennessee </option>
+
+                                                            <option value="Texas" data-code="3970">
+                                                                Texas </option>
+
+                                                            <option value="Utah" data-code="3972">
+                                                                Utah </option>
+
+                                                            <option value="Vermont" data-code="3973">
+                                                                Vermont </option>
+
+                                                            <option value="Virginia" data-code="3974">
+                                                                Virginia </option>
+
+                                                            <option value="Washington" data-code="3975">
+                                                                Washington </option>
+
+                                                            <option value="West Virginia" data-code="3976">
+                                                                West Virginia </option>
+
+                                                            <option value="Wisconsin" data-code="3977">
+                                                                Wisconsin </option>
+
+                                                            <option value="Wyoming" data-code="3978">
+                                                                Wyoming </option>
+                                                        </select>
+                                                    </div>
+                                                    <label id="state-error" class="error" for="state" style="display:none;"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                                                <input id="email" class="form-control customer_email" type="email" name="email" placeholder="Email" value="">
+                                            </div>
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                <input id="phone_number" class="form-control" type="text" placeholder="Phone number" name="phone_number" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Shipping col ends-->
+                                <!--Payment col starts-->
+                                <div id="payment_div" class="form-section">
+                                    <div class="form-section-title margintop_60 clearfix">
+                                        <!--<span class="step-number">3</span>-->
+                                        <h3>Payment</h3>
+                                        <p class="form-subhead-bdr"></p>
+                                    </div>
+                                    <div class="form-content">
+                                        <div class="payment-option">
+                                            <div class="row">
+                                                <div class="payment-options clearfix">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label class="active marginbot-20 auth-active">
+                                                            <input type="radio" name="payment_type" id="payment_type" checked="" value="auth" onclick="showpayment(&#39;auth&#39;)" style="display:none;">
+                                                            <div class="imgbox">
+                                                                <svg xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="56px" height="35px" class="main-svg" viewBox="0 0 780 501" version="1.1" id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="discover.svg">
+                                                                    <metadata id="metadata24">
+                                                                        <rdf:rdf>
+                                                                            <cc:work rdf:about="">
+                                                                                <dc:format>image/svg+xml</dc:format>
+                                                                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                                                                            </cc:work>
+                                                                        </rdf:rdf>
+                                                                    </metadata>
+                                                                    <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1440" inkscape:window-height="851" id="namedview22" showgrid="false" inkscape:zoom="1.0370192" inkscape:cx="390" inkscape:cy="250.5" inkscape:window-x="0" inkscape:window-y="300" inkscape:window-maximized="1" inkscape:current-layer="svg2"></sodipodi:namedview>
+                                                                    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+                                                                    <title id="title4">discover-outline</title>
+                                                                    <desc id="desc6">Created with Sketch.</desc>
+                                                                    <defs id="defs8"></defs>
+                                                                    <g id="Page-1" class="svg-focus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                                        <path d="M54.9919369,30 L725.008063,30 C738.811377,30 750,41.1913862 750,55.0047706 L750,274.923828 C750,274.923828 674.398438,326.001953 586.806641,361.300781 C447.689453,425.611328 246.167104,471 232.371094,471 L54.9919369,471 C41.1886228,471 30,459.808614 30,445.995229 L30,55.0047706 C30,41.1977114 41.1959268,30 54.9919369,30 Z M0,55.0047706 L0,445.995229 C0,476.375498 24.6184216,501 54.9919369,501 L725.008063,501 C755.373686,501 780,476.369761 780,445.995229 L780,55.0047706 C780,24.624502 755.381578,0 725.008063,0 L54.9919369,0 C24.6263138,0 0,24.6302393 0,55.0047706 L0,55.0047706 Z" id="Shape" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M67.4148795,164.40018 L67.4148795,263.542203 L97.4067062,263.542203 C113.354421,263.542203 124.871651,259.999228 134.9804,252.097436 C146.993567,242.73632 154.097398,228.629534 154.097398,214.040136 C154.097398,184.780906 130.877014,164.40018 97.5653737,164.40018 L67.4148795,164.40018 Z M121.561195,238.879265 C115.107494,244.364174 106.724152,246.758076 93.4510023,246.758076 L87.9395429,246.758076 L87.9395429,181.199628 L93.4510023,181.199628 C106.724152,181.199628 114.776733,183.436491 121.561195,189.216328 C128.665025,195.172357 132.938471,204.399413 132.938471,213.898417 C132.938471,223.412742 128.665025,232.923237 121.561195,238.879265 L121.561195,238.879265 Z" id="path20-path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M163.548287,164.40018 L184.08894,164.40018 L184.08894,263.542203 L163.548287,263.542203 L163.548287,164.40018 L163.548287,164.40018 Z" id="path22" fill="#393939" sketch:type="MSShapeGroup" transform="translate(173.818614, 213.971192) scale(1, -1) translate(-173.818614, -213.971192) "></path>
+                                                                        <path d="M234.314417,225.998791 C221.988797,230.292494 218.368329,233.126874 218.368329,238.481554 C218.368329,244.724851 224.817555,249.470523 233.670797,249.470523 C239.824249,249.470523 244.882896,247.088111 250.233654,241.442332 L260.981549,254.691145 C252.148649,261.964777 241.583832,265.683943 230.038124,265.683943 C211.406079,265.683943 197.193536,253.499939 197.193536,237.275027 C197.193536,223.616379 203.811193,216.626185 223.102725,210.087959 C231.143914,207.418279 235.236316,205.637216 237.302249,204.44218 C241.405636,201.91805 243.460584,198.348263 243.460584,194.184788 C243.460584,186.152767 236.676123,180.200569 227.512869,180.200569 C217.715352,180.200569 209.824693,184.812182 205.093552,193.42257 L191.825284,181.391775 C201.289193,168.315323 212.65345,162.520165 228.283423,162.520165 C249.628276,162.520165 264.603644,175.880054 264.603644,195.073405 C264.603644,210.823366 257.67923,217.955279 234.314417,225.998791" id="path24" fill="#393939" sketch:type="MSShapeGroup" transform="translate(228.214464, 214.102054) scale(1, -1) translate(-228.214464, -214.102054) "></path>
+                                                                        <path d="M271.082568,213.626869 C271.082568,184.486376 295.38596,161.89177 326.663808,161.89177 C335.508506,161.89177 343.079796,163.527284 352.420839,167.667777 L352.420839,190.430914 C344.206742,182.693822 336.932446,179.572174 327.619881,179.572174 C306.932075,179.572174 292.249225,193.694282 292.249225,213.768588 C292.249225,232.804898 307.399941,247.819453 326.663808,247.819453 C336.46458,247.819453 343.877202,244.529273 352.420839,236.665784 L352.420839,259.41743 C343.401199,263.722624 335.988577,265.507517 327.152016,265.507517 C296.032836,265.507517 271.082568,242.453282 271.082568,213.626869" id="path26" fill="#393939" sketch:type="MSShapeGroup" transform="translate(311.751704, 213.699644) scale(1, -1) translate(-311.751704, -213.699644) "></path>
+                                                                        <path d="M515.282898,199.340675 L487.198743,265.933289 L464.761526,265.933289 L509.448814,164.247985 L520.502653,164.247985 L565.995485,265.933289 L543.72914,265.933289 L515.282898,199.340675" id="path28" fill="#393939" sketch:type="MSShapeGroup" transform="translate(515.378505, 215.090637) scale(1, -1) translate(-515.378505, -215.090637) "></path>
+                                                                        <path d="M575.283638,164.40018 L633.534968,164.40018 L633.534968,181.184307 L595.808709,181.184307 L595.808709,207.946219 L632.143575,207.946219 L632.143575,224.738006 L595.808709,224.738006 L595.808709,246.742755 L633.534968,246.742755 L633.534968,263.542203 L575.283638,263.542203 L575.283638,164.40018" id="path30" fill="#393939" sketch:type="MSShapeGroup" transform="translate(604.409303, 213.971192) scale(1, -1) translate(-604.409303, -213.971192) "></path>
+                                                                        <path d="M714.862253,193.670901 C714.862253,175.109541 701.286007,164.40018 677.595723,164.40018 L647.139692,164.40018 L647.139692,263.542203 L667.656626,263.542203 L667.656626,223.715331 L670.333632,223.715331 L698.7636,263.542203 L724.024286,263.542203 L690.874976,221.777228 C706.347095,218.812619 714.862253,208.850156 714.862253,193.670901 L714.862253,193.670901 Z M673.657513,210.041362 L667.656626,210.041362 L667.656626,180.016083 L673.982985,180.016083 C686.77403,180.016083 693.726923,185.064344 693.726923,194.712727 C693.726923,204.679021 686.77403,210.041362 673.657513,210.041362 L673.657513,210.041362 Z" id="path32-path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M359.109286,213.955492 C359.109286,213.955492 359.109286,213.955492 359.109286,213.989964 C359.109286,243.118966 384.190962,266.697945 415.131133,266.697945 C446.071303,266.697945 471.15298,243.118966 471.15298,213.989964 L471.15298,213.955492 C471.15298,184.82649 446.071303,161.213039 415.131133,161.213039 C384.190962,161.213039 359.109286,184.82649 359.109286,213.955492" id="path44" fill="#393939" sketch:type="MSShapeGroup" transform="translate(415.131133, 213.955492) scale(1, -1) translate(-415.131133, -213.955492) "></path>
+                                                                    </g>
+                                                                </svg>
+                                                                <svg width="56px" height="35px" class="main-svg" viewBox="0 0 780 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                                    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+                                                                    <title>amex-outline</title>
+                                                                    <desc>Created with Sketch.</desc>
+                                                                    <defs></defs>
+                                                                    <g id="Page-1" class="svg-focus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                                        <rect id="Rectangle-1" stroke="#393939" stroke-width="30" sketch:type="MSShapeGroup" x="15" y="15" width="750" height="471" rx="40"></rect>
+                                                                        <path d="M29.0019512,236.719459 L63.6812701,236.719459 L71.5007649,217.937789 L89.0069055,217.937789 L96.8059104,236.719459 L165.040159,236.719459 L165.040159,222.360306 L171.130811,236.78067 L206.552892,236.78067 L212.643543,222.146067 L212.643543,236.719459 L382.218753,236.719459 L382.139354,205.889363 L385.420315,205.889363 C387.717756,205.968428 388.388803,206.180117 388.388803,209.957365 L388.388803,236.719459 L476.093671,236.719459 L476.093671,229.542433 C483.167843,233.31713 494.170971,236.719459 508.649714,236.719459 L545.547075,236.719459 L553.443408,217.937789 L570.949548,217.937789 L578.671716,236.719459 L649.774564,236.719459 L649.774564,218.878913 L660.542057,236.719459 L717.519614,236.719459 L717.519614,118.785672 L661.131145,118.785672 L661.131145,132.713795 L653.234812,118.785672 L595.373624,118.785672 L595.373624,132.713795 L588.122726,118.785672 L509.966197,118.785672 C496.883334,118.785672 485.383323,120.604158 476.093671,125.671944 L476.093671,118.785672 L422.158879,118.785672 L422.158879,125.671944 C416.247515,120.44858 408.192385,118.785672 399.235695,118.785672 L202.191084,118.785672 L188.969914,149.245949 L175.39273,118.785672 L113.328531,118.785672 L113.328531,132.713795 L106.510485,118.785672 L53.5797019,118.785672 L28.99939,174.857781 L28.99939,236.719459 L29.0019512,236.719459 Z M247.909388,219.708418 L227.101797,219.708418 L227.02496,153.482883 L197.593641,219.708418 L179.772467,219.708418 L150.264311,153.424223 L150.264311,219.708418 L108.982091,219.708418 L101.183086,200.847683 L58.9224684,200.847683 L51.0440648,219.708418 L28.99939,219.708418 L65.3460823,135.150097 L95.5022344,135.150097 L130.022756,215.209386 L130.022756,135.150097 L163.149957,135.150097 L189.712676,192.512744 L214.113701,135.150097 L247.906827,135.150097 L247.906827,219.708418 L247.909388,219.708418 Z M94.246341,183.298872 L80.3541235,149.589295 L66.5413047,183.298872 L94.246341,183.298872 Z M330.718356,219.708418 L262.914397,219.708418 L262.914397,135.150097 L330.718356,135.150097 L330.718356,152.75855 L283.2123,152.75855 L283.2123,168.000165 L329.5786,168.000165 L329.5786,185.333167 L283.2123,185.333167 L283.2123,202.219837 L330.718356,202.219837 L330.718356,219.708418 L330.718356,219.708418 Z M426.268776,157.923254 C426.268776,171.405044 417.232687,178.370381 411.966758,180.461767 C416.407965,182.145078 420.201175,185.118928 422.006856,187.582683 C424.872895,191.78841 425.367216,195.545254 425.367216,203.097199 L425.367216,219.708418 L404.895148,219.708418 L404.818311,209.044898 C404.818311,203.956708 405.307509,196.639406 401.614188,192.571404 C398.648261,189.597555 394.127655,188.952286 386.82041,188.952286 L365.03186,188.952286 L365.03186,219.708418 L344.736519,219.708418 L344.736519,135.150097 L391.420414,135.150097 C401.793475,135.150097 409.436244,135.422997 415.998165,139.200245 C422.419218,142.977493 426.268776,148.491611 426.268776,157.923254 Z M400.611257,170.479445 C397.822056,172.165307 394.523167,172.221417 390.571159,172.221417 L365.914009,172.221417 L365.914009,153.439747 L390.906682,153.439747 C394.443768,153.439747 398.134529,153.597877 400.531858,154.964929 C403.164823,156.196807 404.793777,158.818691 404.793777,162.44036 C404.793777,166.135993 403.244221,169.109842 400.611257,170.479445 Z M458.820263,219.708418 L438.109999,219.708418 L438.109999,135.150097 L458.820263,135.150097 L458.820263,219.708418 Z M699.236548,219.708418 L670.473715,219.708418 L632.001186,156.242493 L632.001186,219.708418 L590.66518,219.708418 L582.766286,200.847683 L540.602996,200.847683 L532.939738,219.708418 L509.189271,219.708418 C499.323337,219.708418 486.832123,217.535416 479.757952,210.35584 C472.624872,203.176264 468.913621,193.451317 468.913621,178.074526 C468.913621,165.53386 471.131664,154.069492 479.85528,145.010218 C486.417201,138.261672 496.692934,135.150097 510.679918,135.150097 L530.329824,135.150097 L530.329824,153.268644 L511.092279,153.268644 C503.685145,153.268644 499.502625,154.365346 495.473779,158.277769 C492.013531,161.838227 489.639253,168.56892 489.639253,177.431808 C489.639253,186.491081 491.447495,193.022838 495.220216,197.289776 C498.34494,200.635994 504.02323,201.651082 509.365997,201.651082 L518.481484,201.651082 L547.08808,135.152647 L577.500357,135.152647 L611.864642,215.132872 L611.864642,135.152647 L642.768679,135.152647 L678.446885,194.043026 L678.446885,135.152647 L699.236548,135.152647 L699.236548,219.708418 Z M575.862851,183.298872 L561.816959,149.589295 L547.847904,183.298872 L575.862851,183.298872 Z" id="Path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M750.958681,354.725349 C746.028275,361.904926 736.421028,365.544448 723.415003,365.544448 L684.21764,365.544448 L684.21764,347.408048 L723.256206,347.408048 C727.128815,347.408048 729.838617,346.900504 731.470133,345.314111 C732.883943,344.005719 733.870024,342.105618 733.870024,339.797442 C733.870024,337.333687 732.883943,335.377475 731.390734,334.204259 C729.918016,332.91372 727.77425,332.327112 724.239725,332.327112 C705.181468,331.681843 681.405388,332.91372 681.405388,306.149076 C681.405388,293.881309 689.227444,280.968274 710.526795,280.968274 L750.956119,280.968274 L750.956119,264.140265 L713.392834,264.140265 C702.056743,264.140265 693.822326,266.843765 687.990361,271.046941 L687.990361,264.140265 L632.429174,264.140265 C623.5442,264.140265 613.114792,266.33367 608.181825,271.046941 L608.181825,264.140265 L508.96414,264.140265 L508.96414,271.046941 C501.067808,265.374693 487.744188,264.140265 481.594628,264.140265 L416.149579,264.140265 L416.149579,271.046941 C409.902692,265.022728 396.010474,264.140265 387.542983,264.140265 L314.29893,264.140265 L297.538113,282.202702 L281.840214,264.140265 L172.428757,264.140265 L172.428757,382.155667 L279.78097,382.155667 L297.051475,363.807577 L313.320533,382.155667 L379.492976,382.214328 L379.492976,354.452449 L385.99855,354.452449 C394.778513,354.587624 405.133645,354.235659 414.269622,350.302832 L414.269622,382.153116 L468.84985,382.153116 L468.84985,351.394434 L471.482814,351.394434 C474.843174,351.394434 475.173575,351.53216 475.173575,354.875827 L475.173575,382.150566 L640.978625,382.150566 C651.505361,382.150566 662.508489,379.46747 668.601702,374.598621 L668.601702,382.150566 L721.1944,382.150566 C732.138619,382.150566 742.826713,380.622834 750.958681,376.710411 L750.958681,354.725349 Z M422.204141,309.3312 C422.204141,332.826141 404.600673,337.677137 386.858897,337.677137 L361.533262,337.677137 L361.533262,366.046027 L322.082335,366.046027 L297.089662,338.046955 L271.11603,366.046027 L190.718407,366.046027 L190.718407,281.467303 L272.353114,281.467303 L297.325297,309.190924 L323.142692,281.467303 L387.998653,281.467303 C404.106352,281.467303 422.204141,285.907673 422.204141,309.3312 Z M260.836671,348.255628 L210.933284,348.255628 L210.933284,331.427619 L255.493904,331.427619 L255.493904,314.171131 L210.933284,314.171131 L210.933284,298.79434 L261.82019,298.79434 L284.021101,323.442094 L260.836671,348.255628 Z M341.245167,357.940198 L310.082444,323.488434 L341.245167,290.130822 L341.245167,357.940198 Z M387.3307,320.333069 L361.100943,320.333069 L361.100943,298.79434 L387.566335,298.79434 C394.89407,298.79434 399.980711,301.76819 399.980711,309.164556 C399.980711,316.479307 395.129705,320.333069 387.3307,320.333069 Z M524.745187,281.467303 L592.487676,281.467303 L592.487676,298.958434 L544.958568,298.958434 L544.958568,314.335225 L591.32743,314.335225 L591.32743,331.591713 L544.958568,331.591713 L544.958568,348.419721 L592.487676,348.496235 L592.487676,366.046027 L524.745187,366.046027 L524.745187,281.467303 L524.745187,281.467303 Z M498.701835,326.740716 C503.219879,328.401073 506.913201,331.377473 508.644605,333.841228 C511.510644,337.970441 511.925566,341.824203 512.007526,349.27923 L512.007526,366.046027 L491.630225,366.046027 L491.630225,355.464123 C491.630225,350.375933 492.121985,342.841841 488.349264,338.909014 C485.383337,335.879055 480.862732,335.154721 473.458159,335.154721 L451.766937,335.154721 L451.766937,366.046027 L431.371707,366.046027 L431.371707,281.467303 L478.232328,281.467303 C488.508062,281.467303 495.992033,281.918736 502.653843,285.45879 C509.059528,289.312552 513.088373,294.592027 513.088373,304.24046 C513.085812,317.740104 504.044601,324.628926 498.701835,326.740716 Z M487.228516,316.048278 C484.513591,317.652524 481.155793,317.79025 477.206346,317.79025 L452.549197,317.79025 L452.549197,298.79434 L477.54187,298.79434 C481.155793,298.79434 484.772278,298.870855 487.228516,300.322073 C489.858919,301.691676 491.431526,304.31101 491.431526,307.930128 C491.431526,311.549247 489.858919,314.464435 487.228516,316.048278 Z M670.459345,321.435736 C674.411353,325.508839 676.529507,330.650589 676.529507,339.355347 C676.529507,357.550408 665.114017,366.043477 644.644511,366.043477 L605.111624,366.043477 L605.111624,347.907077 L644.485714,347.907077 C648.335272,347.907077 651.065564,347.399533 652.776478,345.81314 C654.172359,344.504748 655.173808,342.604647 655.173808,340.296471 C655.173808,337.832715 654.090399,335.876504 652.69708,334.703287 C651.144962,333.412749 649.003758,332.826141 645.469233,332.826141 C626.487813,332.180871 602.716856,333.412749 602.716856,306.648105 C602.716856,294.380338 610.456952,281.467303 631.735813,281.467303 L672.426385,281.467303 L672.426385,299.468528 L635.1935,299.468528 C631.50274,299.468528 629.102849,299.606254 627.061533,300.996261 C624.838368,302.365864 624.013646,304.398589 624.013646,307.081685 C624.013646,310.272324 625.901287,312.442775 628.454853,313.381348 C630.596057,314.123536 632.896059,314.340326 636.353746,314.340326 L647.280037,314.63363 C658.298532,314.901429 665.861902,316.79898 670.459345,321.435736 Z M751.00061,298.79434 L714.008483,298.79434 C710.315161,298.79434 707.861484,298.932066 705.794556,300.322073 C703.653351,301.691676 702.828629,303.724401 702.828629,306.407497 C702.828629,309.598136 704.636871,311.768587 707.267274,312.707161 C709.408479,313.449348 711.708481,313.666138 715.08933,313.666138 L726.089897,313.959442 C737.190352,314.232342 744.600047,316.132443 749.118092,320.766649 C749.940253,321.411919 750.434574,322.136252 751.00061,322.860586 L751.00061,298.79434 Z" id="Path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                    </g>
+                                                                </svg>
+                                                                <svg xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="56px" height="35px" class="main-svg" viewBox="0 0 780 501" version="1.1" id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="mastercard.svg">
+                                                                    <metadata id="metadata45">
+                                                                        <rdf:rdf>
+                                                                            <cc:work rdf:about="">
+                                                                                <dc:format>image/svg+xml</dc:format>
+                                                                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                                                                            </cc:work>
+                                                                        </rdf:rdf>
+                                                                    </metadata>
+                                                                    <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1440" inkscape:window-height="851" id="namedview43" showgrid="false" inkscape:zoom="1.0370192" inkscape:cx="390" inkscape:cy="250.5" inkscape:window-x="0" inkscape:window-y="300" inkscape:window-maximized="1" inkscape:current-layer="svg2"></sodipodi:namedview>
+                                                                    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+                                                                    <title id="title4">jcb copy</title>
+                                                                    <desc id="desc6">Created with Sketch.</desc>
+                                                                    <defs id="defs8"></defs>
+                                                                    <g id="Page-1" class="svg-focus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                                        <rect id="Rectangle-1" stroke="#393939" stroke-width="30" sketch:type="MSShapeGroup" x="15" y="15" width="750" height="471" rx="40"></rect>
+                                                                        <path d="M718.974684,250.480392 C718.974684,362.842604 627.368878,454.285954 514.777214,454.285954 C467.816046,454.285954 424.523861,438.343845 389.986064,411.683982 C355.471113,438.343845 312.179385,454.285954 265.215932,454.285954 C152.62701,454.285954 61.025316,362.842604 61.025316,250.480392 C61.025316,138.114077 152.62701,46.7140456 265.215932,46.7140456 C312.179385,46.7140456 355.471113,62.5964198 389.986064,89.2950419 C424.523861,62.5964198 467.816046,46.7140456 514.777214,46.7140456 C627.368878,46.7140456 718.974684,138.114077 718.974684,250.480392 L718.974684,250.480392 Z M514.483011,64.7140456 C473.064156,64.7140456 434.825391,78.2571553 403.933733,101.111723 C431.95143,127.13547 452.67228,160.929405 462.573511,199.014271 L443.648315,199.014271 C433.952694,165.343455 415.000084,135.617013 389.691861,112.739646 C364.411053,135.617013 345.444735,165.343455 335.785666,199.014271 L316.833056,199.014271 C326.757132,160.929405 347.477983,127.13547 375.495679,101.111723 C344.585745,78.2571553 306.361145,64.7140456 264.921728,64.7140456 C162.254141,64.7140456 79.025316,147.773892 79.025316,250.258754 C79.025316,352.717167 162.254141,435.803005 264.921728,435.803005 C306.361145,435.803005 344.585745,422.260352 375.495679,399.407152 C349.131996,374.902787 329.242721,343.508308 318.729231,308.168544 L337.864605,308.168544 C348.030843,339.112042 366.078773,366.42398 389.691861,387.775581 C413.332363,366.42398 431.403138,339.112042 441.569377,308.168544 L460.700182,308.168544 C450.168415,343.508308 430.28371,374.902787 403.933733,399.407152 C434.825391,422.260352 473.064156,435.803005 514.483011,435.803005 C617.150598,435.803005 700.381251,352.717167 700.381251,250.258754 C700.381251,147.773892 617.150598,64.7140456 514.483011,64.7140456 L514.483011,64.7140456 Z" id="path14-path" stroke="#979797" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M189.730271,205.714046 L159.963068,205.714046 L141.36045,261.062501 L140.585532,205.714046 L112.999614,205.714046 L98.025316,295.140978 L115.976837,295.140978 L127.506494,226.819865 L129.116644,295.140978 L142.195681,295.140978 L166.70614,226.411748 L155.724317,295.140978 L174.896701,295.140978 L189.730271,205.714046 L189.730271,205.714046 Z" id="path13" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M239.137402,295.053862 L223.245629,295.053862 L223.614812,287.510305 C218.763803,293.468361 212.304929,296.318342 203.527238,296.318342 C193.114725,296.318342 186.025316,288.204788 186.025316,276.470162 C186.025316,258.737808 198.390204,248.429997 219.66163,248.429997 C221.841089,248.429997 224.63235,248.632916 227.484379,248.998169 C228.076991,246.577281 228.220004,245.562232 228.220004,244.259905 C228.220004,239.461449 224.896443,237.651597 215.93142,237.651597 C206.561118,237.528934 198.818785,239.86911 195.640065,240.925655 C195.845217,239.705407 198.310244,224.577252 198.310244,224.577252 C207.846405,221.771959 214.159068,220.714046 221.250305,220.714046 C237.713215,220.714046 246.433791,228.073837 246.414144,242.024608 C246.433791,245.765151 245.821532,250.380296 244.864764,256.463295 C243.194302,266.972657 239.628123,289.544507 239.137402,295.053862 L239.137402,295.053862 Z M225.666664,262.999044 C223.649865,262.793845 222.771685,262.714046 221.386792,262.714046 C210.506404,262.714046 205.025316,266.431333 205.025316,273.754188 C205.025316,278.290902 207.715143,281.176451 211.872106,281.176451 C219.696683,281.176451 225.318499,273.754188 225.666664,262.999044 L225.666664,262.999044 Z" id="path15" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M490.203273,203.714046 C464.79453,203.714046 447.025316,226.040113 447.025316,258.008236 C447.025316,281.755646 459.887321,296.601995 480.525928,296.601995 C485.82151,296.601995 490.404314,295.907511 497.454429,293.957212 L500.817283,273.601052 C494.479947,276.714599 489.266609,278.196589 484.533025,278.196589 C473.389,278.196589 466.663291,269.981348 466.663291,256.417262 C466.663291,236.715002 476.67418,222.906958 490.993727,222.906958 C496.312155,222.906958 501.283331,224.290908 508.127837,227.748277 L511.266806,208.350623 C508.456812,207.253494 498.573857,203.714046 490.203273,203.714046 L490.203273,203.714046 Z" id="path17" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M559.163903,295.053862 L543.295432,295.053862 L543.66096,287.510305 C538.790303,293.468361 532.311325,296.318342 523.547799,296.318342 C513.157675,296.318342 506.025316,288.204788 506.025316,276.470162 C506.025316,258.737808 518.434981,248.429997 539.685846,248.429997 C541.865305,248.429997 544.657023,248.632916 547.512708,248.998169 C548.097552,246.577281 548.243763,245.562232 548.243763,244.259905 C548.243763,239.461449 544.92203,237.651597 535.97574,237.651597 C526.586248,237.528934 518.864476,239.86911 515.684385,240.925655 C515.867149,239.705407 518.334461,224.577252 518.334461,224.577252 C527.88844,221.771959 534.202931,220.714046 541.253046,220.714046 C557.738345,220.714046 566.460749,228.073837 566.437903,242.024608 C566.479025,245.765151 565.84849,250.380296 564.88898,256.463295 C563.239536,266.972657 559.657365,289.544507 559.163903,295.053862 L559.163903,295.053862 Z M545.686768,262.999044 C543.690073,262.793845 542.79453,262.714046 541.387249,262.714046 C530.526508,262.714046 525.025316,266.431333 525.025316,273.754188 C525.025316,278.290902 527.716514,281.176451 531.915513,281.176451 C539.719529,281.176451 545.362362,273.754188 545.686768,262.999044 L545.686768,262.999044 Z" id="path19" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M333.490998,278.202051 C332.207082,278.653032 330.516516,278.893342 328.337057,278.893342 C323.77253,278.893342 321.757559,277.268625 321.757559,273.505282 C321.798681,271.189273 324.955926,253.986332 327.158231,240.178288 L336.995494,240.178288 L339.604448,222.689892 L329.803737,222.689892 L332.024318,211.714046 L312.972558,211.714046 C312.972558,211.714046 305.762068,254.515288 304.68239,261.285931 C303.4597,269.034232 301.912147,277.472 302.031858,280.683586 C302.031858,291.036085 307.37176,296.669928 317.170187,296.669928 C321.615917,296.669928 325.705258,295.934405 330.968857,294.310143 L333.490998,278.202051 L333.490998,278.202051 Z" id="path21" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M392.06275,293.388561 C385.501529,295.383548 379.182469,296.318342 372.50245,296.318342 C351.146496,296.27411 340.025316,285.153712 340.025316,263.864126 C340.025316,239.014116 354.184945,220.714046 373.397993,220.714046 C389.106545,220.714046 399.153987,230.941601 399.153987,247.046046 C399.153987,252.373459 398.441208,257.5586 396.787196,264.942103 L358.849992,264.942103 C357.566076,275.451465 364.332907,279.845452 375.417534,279.845452 C382.239194,279.845452 388.37549,278.461501 395.219996,275.290954 L392.06275,293.388561 L392.06275,293.388561 Z M382.070572,250.730935 C382.193938,249.226145 384.085544,237.714046 373.206526,237.714046 C367.134197,237.714046 362.77528,242.371599 361.025316,250.730935 L382.070572,250.730935 L382.070572,250.730935 Z" id="path23" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M254.319878,245.318274 C254.319878,254.53078 258.760582,260.85409 268.907174,265.632938 C276.670982,269.291858 277.872197,270.347947 277.872197,273.666693 C277.872197,278.176503 274.44903,280.210705 266.849253,280.210705 C261.145193,280.210705 255.806662,279.355711 249.672193,277.366196 C249.672193,277.366196 247.148682,293.388561 247.025316,294.1633 C251.407079,295.09855 255.276647,295.989112 266.992266,296.318342 C287.222852,296.318342 296.555687,288.609257 296.555687,272.016896 C296.555687,261.994083 292.662818,256.178297 283.044414,251.762423 C275.020167,248.062919 274.083046,247.248965 274.083046,243.854067 C274.083046,239.908326 277.281413,237.915163 283.49447,237.915163 C287.242499,237.915163 292.396896,238.32328 297.246078,239.014116 L299.978854,222.137212 C295.006307,221.363841 287.488773,220.714046 283.10701,220.714046 C261.653734,220.714046 254.238091,231.876851 254.319878,245.318274 L254.319878,245.318274 Z" id="path25" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M667.089388,295.140978 L648.940939,295.140978 L649.854758,288.372159 C644.577452,293.965418 639.18135,296.405457 632.172356,296.405457 C618.232044,296.405457 609.025316,284.426873 609.025316,266.249466 C609.025316,242.02782 623.303741,221.654331 640.213965,221.654331 C647.634177,221.654331 653.295287,224.664367 658.53604,231.557673 L662.771592,205.714046 L681.683081,205.714046 L667.089388,295.140978 L667.089388,295.140978 Z M638.848872,278.473787 C647.772317,278.473787 654.068531,268.365247 654.068531,253.968967 C654.068531,244.717244 650.504636,239.714046 643.897724,239.714046 C635.198165,239.714046 629.025316,249.820762 629.025316,264.116723 C629.025316,273.652075 632.328772,278.473787 638.848872,278.473787 Z" id="path27" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M579.886057,222.49938 C577.482713,244.990974 573.224315,267.783982 569.902582,290.316616 L569.025316,295.214936 L588.178966,295.214936 C595.046318,250.746112 596.714038,242.062562 607.451413,243.160147 C609.160255,234.029263 612.340346,226.081692 614.743691,222.055695 C606.702082,220.384922 602.215229,224.9417 596.371356,233.543171 C596.837403,229.800804 597.673548,226.200707 597.490784,222.49938 L579.886057,222.49938 L579.886057,222.49938 Z" id="path29" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M411.908903,222.49938 C409.500989,244.990974 405.224315,267.783982 401.902582,290.316616 L401.025316,295.214936 L420.197243,295.214936 C427.064594,250.746112 428.714038,242.062562 439.451413,243.160147 C441.183101,234.029263 444.381468,226.081692 446.74826,222.055695 C438.738634,220.384922 434.219799,224.9417 428.366787,233.543171 C428.837403,229.800804 429.668979,226.200707 429.509061,222.49938 L411.908903,222.49938 L411.908903,222.49938 Z" id="path31" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <g id="path14-path-+-path14-path" sketch:type="MSLayerGroup" transform="translate(691.000000, 357.000000)" fill="#393939"></g>
+                                                                        <g id="path14-path-+-path14-path-copy" sketch:type="MSLayerGroup" transform="translate(673.000000, 288.000000)" fill="#393939"></g>
+                                                                    </g>
+                                                                </svg>
+                                                                <svg width="56px" height="35px" class="main-svg" viewBox="0 0 780 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                                    <!-- Generator: Sketch 3.3.1 (12005) - http://www.bohemiancoding.com/sketch -->
+                                                                    <title>visa</title>
+                                                                    <desc>Created with Sketch.</desc>
+                                                                    <defs></defs>
+                                                                    <g id="Page-1" class="svg-focus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                                        <rect id="Rectangle-1" stroke="#393939" stroke-width="30" sketch:type="MSShapeGroup" x="15" y="14" width="750" height="471" rx="40"></rect>
+                                                                        <path d="M293.1975,348.2275 L326.5585,152.4655 L379.9175,152.4655 L346.5335,348.2275 L293.1975,348.2275 Z" id="Shape" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M539.3075,156.6875 C528.7355,152.7215 512.1715,148.4655 491.4845,148.4655 C438.7605,148.4655 401.6205,175.0165 401.3045,213.0695 C401.0075,241.1985 427.8185,256.8905 448.0585,266.2545 C468.8275,275.8495 475.8105,281.9695 475.7115,290.5375 C475.5795,303.6595 459.1255,309.6545 443.7885,309.6545 C422.4315,309.6545 411.0855,306.6875 393.5625,299.3785 L386.6865,296.2665 L379.1975,340.0905 C391.6605,345.5545 414.7065,350.2895 438.6355,350.5345 C494.7245,350.5345 531.1365,324.2875 531.5505,283.6525 C531.7515,261.3835 517.5355,244.4355 486.7515,230.4645 C468.1005,221.4085 456.6785,215.3655 456.7995,206.1955 C456.7995,198.0585 466.4675,189.3575 487.3565,189.3575 C504.8055,189.0865 517.4445,192.8915 527.2925,196.8575 L532.0745,199.1165 L539.3075,156.6875" id="Shape" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M676.6145,152.4655 L635.3835,152.4655 C622.6105,152.4655 613.0525,155.9515 607.4425,168.6995 L528.1975,348.1025 L584.2285,348.1025 C584.2285,348.1025 593.3905,323.9805 595.4625,318.6845 C601.5855,318.6845 656.0165,318.7685 663.7985,318.7685 C665.3945,325.6215 670.2905,348.1025 670.2905,348.1025 L719.8025,348.1025 L676.6145,152.4655 Z M611.1975,278.8725 C615.6105,267.5935 632.4565,224.1495 632.4565,224.1495 C632.1415,224.6705 636.8365,212.8155 639.5315,205.4655 L643.1385,222.3435 C643.1385,222.3435 653.3555,269.0725 655.4905,278.8715 L611.1975,278.8715 L611.1975,278.8725 Z" id="Path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M247.9025,152.4655 L195.6625,285.9605 L190.0965,258.8315 C180.3715,227.5575 150.0715,193.6755 116.1975,176.7125 L163.9645,347.9155 L220.4195,347.8505 L304.4235,152.4655 L247.9025,152.4655" id="Path" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                        <path d="M146.9195,152.4655 L60.8785,152.4655 L60.1975,156.5385 C127.1365,172.7425 171.4295,211.9015 189.8155,258.9525 L171.1065,168.9925 C167.8765,156.5965 158.5085,152.8975 146.9195,152.4655" id="Shape" fill="#393939" sketch:type="MSShapeGroup"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <label class="marginbot-20 ppal-active">
+                                                            <input type="radio" name="payment_type" id="payment_type" value="paypal" onchange="showpayment(&#39;paypal&#39;)" style="display:none;">
+                                                            <div class="imgbox">
+                                                                <!--<img class="img-responsive" src="https://cdn.shopify.com/s/files/1/1301/2801/files/paypal.svg" alt=""/>-->
+                                                                <svg width="133px" height="33px" viewBox="0 0 133 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                    <title>PayPal_logo</title>
+                                                                    <desc>Created with Sketch.</desc>
+                                                                    <defs></defs>
+                                                                    <g id="visuals-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                        <g id="landing---subscribe" transform="translate(-444.000000, -3017.000000)" fill-rule="nonzero" fill="#939393" class="svg-focus-paypal">
+                                                                            <g id="PayPal_logo" transform="translate(444.000000, 3017.000000)">
+                                                                                <path d="M107.17694,9.32081384 C106.157914,8.08105772 104.349502,7.425 101.946539,7.425 L94.7659944,7.425 C94.2758573,7.425 93.8578415,7.79458908 93.7806969,8.29628027 L90.8771908,27.3353127 C90.8190633,27.7108389 91.1007307,28.05 91.4670776,28.05 L95.152076,28.05 C95.4940238,28.05 95.787532,27.7913619 95.8409949,27.4392132 L96.6651859,22.0426932 C96.741254,21.5402599 97.1596287,21.1710419 97.649407,21.1710419 L99.9214041,21.1710419 C104.651622,21.1710419 107.380745,18.804707 108.093704,14.1132264 C108.416635,12.0623039 108.105904,10.449619 107.17694,9.32081384 Z M102.774318,14.3789149 C102.382495,17.0432217 100.41477,17.0432217 98.509838,17.0432217 L97.4265848,17.0432217 L98.1883425,12.0674989 C98.2335528,11.7665584 98.4822095,11.5453987 98.7782293,11.5453987 L99.2751838,11.5453987 C100.570136,11.5453987 101.794402,11.5453987 102.426629,12.3098098 C102.803023,12.765859 102.91856,13.4430679 102.774318,14.3789149 Z" id="Shape"></path>
+                                                                                <path d="M123.324398,14.3692648 L119.957799,14.3692648 C119.66837,14.3692648 119.422548,14.5973736 119.379643,14.9072501 L119.229829,15.9316384 L118.993502,15.5602451 C118.264126,14.4093844 116.638325,14.025 115.014635,14.025 C111.291085,14.025 108.111579,17.0897588 107.491573,21.3882922 C107.171196,23.5322096 107.626265,25.5828966 108.746355,27.0130664 C109.77536,28.3270803 111.242554,28.875 112.990738,28.875 C115.990537,28.875 117.653967,26.7796083 117.653967,26.7796083 L117.504153,27.7959726 C117.447885,28.1857063 117.723247,28.5341741 118.083716,28.5341741 L121.11798,28.5341741 C121.59837,28.5341741 122.008424,28.1528464 122.083683,27.635494 L123.905719,15.1051737 C123.961987,14.719643 123.686976,14.3692648 123.324398,14.3692648 Z M118.628462,21.4960421 C118.30492,23.587995 116.775128,24.9910363 114.825785,24.9910363 C113.849531,24.9910363 113.065293,24.6502103 112.562747,24.004093 C112.065477,23.3621787 111.877682,22.4497433 112.034178,21.4326148 C112.339784,19.357856 113.891029,17.9078174 115.810127,17.9078174 C116.767039,17.9078174 117.544596,18.2532285 118.056988,18.9054593 C118.574304,19.5630394 118.777221,20.4823524 118.628462,21.4960421 Z" id="Shape"></path>
+                                                                                <path d="M132.404659,7.425 L129.098227,7.425 C128.806062,7.42611318 128.554665,7.64726495 128.509606,7.94819462 L125.572582,27.3353384 C125.515722,27.7108511 125.795371,28.05 126.160845,28.05 L129.113604,28.05 C129.604241,28.05 130.020852,27.6811663 130.095592,27.1787511 L132.992565,8.14003265 C133.049782,7.76489098 132.769418,7.425 132.404659,7.425 Z" id="Shape"></path>
+                                                                                <path d="M55.1358236,9.32081384 C54.1154068,8.08105772 52.3052793,7.425 49.9024202,7.425 L42.7229054,7.425 C42.232072,7.425 41.8137155,7.79458908 41.7372919,8.29628027 L38.8335531,27.3353127 C38.7761457,27.7108389 39.0570832,28.05 39.4255671,28.05 L42.8531485,28.05 C43.3439819,28.05 43.7623384,27.6811531 43.838762,27.1787197 L44.6223733,22.0426932 C44.6977205,21.5402599 45.1164358,21.1710419 45.6072692,21.1710419 L47.8798852,21.1710419 C52.608821,21.1710419 55.3385436,18.804707 56.0507543,14.1132264 C56.371877,12.0623039 56.0643886,10.449619 55.1358236,9.32081384 Z M50.7305222,14.3789149 C50.337999,17.0432217 48.3696422,17.0432217 46.4665864,17.0432217 L45.3833803,17.0432217 L46.1429521,12.0674989 C46.1881605,11.7665584 46.4403943,11.5453987 46.7338897,11.5453987 L47.2304639,11.5453987 C48.526795,11.5453987 49.749573,11.5453987 50.3817721,12.3098098 C50.7588671,12.765859 50.8740407,13.4430679 50.7305222,14.3789149 Z" id="Shape"></path>
+                                                                                <path d="M71.2849444,14.3692648 L67.9147972,14.3692648 C67.6278564,14.3692648 67.3799481,14.5973736 67.3359927,14.9072501 L67.1858411,15.9316384 L66.9502402,15.5602451 C66.2212841,14.4093844 64.5945833,14.025 62.9717505,14.025 C59.248202,14.025 56.0682936,17.0897588 55.4483469,21.3882922 C55.1269451,23.5322096 55.5844328,25.5828966 56.7037127,27.0130664 C57.7305104,28.3270803 59.2000269,28.875 60.9476929,28.875 C63.94756,28.875 65.611535,26.7796083 65.611535,26.7796083 L65.4613834,27.7959726 C65.4044173,28.1857063 65.6804571,28.5341741 66.0398363,28.5341741 L69.0748677,28.5341741 C69.5569703,28.5341741 69.9645247,28.1528464 70.0411829,27.635494 L71.8619907,15.1051737 C71.9193085,14.719643 71.643972,14.3692648 71.2849444,14.3692648 Z M66.5873446,21.4960421 C66.2620747,23.587995 64.7345372,24.9910363 62.7857313,24.9910363 C61.8071086,24.9910363 61.0254061,24.6502103 60.5229081,24.004093 C60.0249815,23.3621787 59.8357975,22.4497433 59.9943886,21.4326148 C60.2978565,19.357856 61.851064,17.9078174 63.7699803,17.9078174 C64.7271527,17.9078174 65.5046355,18.2532285 66.0173312,18.9054593 C66.5310817,19.5630394 66.7343314,20.4823524 66.5873446,21.4960421 Z" id="Shape"></path>
+                                                                                <path d="M89.4474312,14.85 L86.0123459,14.85 C85.6852119,14.85 85.3773421,15.0157518 85.1907651,15.2924883 L80.4532086,22.3878972 L78.4450982,15.5703129 C78.3188109,15.1437832 77.931744,14.8507254 77.493306,14.8507254 L74.1181537,14.8507254 C73.7075417,14.8507254 73.4232169,15.2583949 73.5537851,15.651194 L77.3370522,26.9397236 L73.7796039,32.0442978 C73.4992033,32.4458015 73.7817444,33 74.2647754,33 L77.6955797,33 C78.0202165,33 78.3266593,32.8382379 78.5107391,32.5669418 L89.9358133,15.8009872 C90.2101492,15.3994834 89.9286784,14.85 89.4474312,14.85 Z" id="Shape"></path>
+                                                                                <path d="M26.8164415,10.1695342 C26.4308805,9.73251974 25.9528431,9.37033898 25.3932518,9.075 L25.3932518,9.075 C25.3633972,9.26499051 25.3299018,9.45970354 25.2913093,9.65950235 C25.2549013,9.84586016 25.2152165,10.0274954 25.1740755,10.2069511 C23.9008869,15.7580887 20.3463714,18.1378743 15.7130861,18.6384611 C15.4043461,18.671882 15.090873,18.6965844 14.7726669,18.7136581 C14.4231498,18.7325482 14.0681716,18.7412667 13.7084603,18.7412667 L10.7772502,18.7412667 C10.0727549,18.7412667 9.47966821,19.2512986 9.36971597,19.9451454 L8.04045899,28.3555857 L7.86861311,29.4417647 L7.44409554,32.1343262 C7.37237173,32.5884144 7.72407325,33 8.18427068,33 L13.3833366,33 C13.9989963,33 14.5218156,32.5535405 14.6193891,31.9479684 L14.6703603,31.6838707 L15.649008,25.4853849 L15.7119939,25.1442738 C15.807747,24.5361589 16.3320226,24.0904259 16.9480463,24.0904259 L17.7257218,24.0904259 C22.7631361,24.0904259 26.7064892,22.0502984 27.8591673,16.1442454 C28.3397532,13.6780014 28.0907224,11.6182573 26.8164415,10.1695342 Z" id="Shape"></path>
+                                                                                <path d="M8.55765615,19.2589508 L8.60588239,18.9470232 L10.2780906,8.28557529 C10.3427576,7.86329603 10.6120207,7.51752729 10.9748136,7.34280373 C11.1403172,7.26335049 11.3229924,7.2192098 11.5162627,7.2192098 L19.3753125,7.2192098 C20.3065903,7.2192098 21.1753933,7.28100676 21.9682034,7.41011828 C22.1947205,7.44653435 22.4150267,7.48846801 22.6302181,7.53591925 C22.8443133,7.58484185 23.052563,7.63817851 23.2542363,7.69703276 C23.3309599,7.72020663 23.4058567,7.74374833 23.4807535,7.76729003 C23.5037706,7.77501465 23.5278837,7.78163575 23.5505354,7.78972821 C23.5640534,7.79451012 23.5764753,7.79965987 23.5899932,7.80444178 C23.9630159,7.93134626 24.3119254,8.07848189 24.633799,8.2498949 C24.6352604,8.25063058 24.6367218,8.25026274 24.6381832,8.25136626 C25.0316654,5.72504745 24.634895,4.00576759 23.2783494,2.44833692 C21.7829708,0.734206805 19.0841283,0 15.6301068,0 L5.60379917,0 C4.89830779,0 4.29621054,0.516446069 4.18733616,1.21975439 L0.0106518074,27.8726385 C-0.0715520046,28.4001197 0.3325254,28.875 0.860821898,28.875 L7.05022091,28.875 L7.22266624,27.7751611 L8.55765615,19.2589508 Z" id="Shape"></path>
+                                                                                <path d="M24.533174,8.85154675 C24.4689806,8.82848304 24.4445796,8.82129927 24.4209294,8.8133593 C24.3439723,8.78916132 24.2670153,8.76496334 24.1881812,8.74114345 C23.9805849,8.68064849 23.7666068,8.62544684 23.5469976,8.5755385 C23.3262623,8.52676444 23.099896,8.48366178 22.8667724,8.44623052 C22.052154,8.31351971 21.1594522,8.25 20.2025571,8.25 L12.1269475,8.25 C11.9279854,8.25 11.7402853,8.29537122 11.5706044,8.37703941 C11.197832,8.55663382 10.921162,8.91166361 10.8547162,9.34609303 L9.13650935,20.3051329 L9.08695652,20.625 C9.20032739,19.9035976 9.81222975,19.3723763 10.5382538,19.3723763 L13.560601,19.3723763 C13.9314964,19.3723763 14.2975116,19.3629239 14.6578958,19.342885 C14.9859956,19.3251146 15.3092152,19.2997823 15.6275546,19.2646196 C20.4052732,18.7439849 24.0699301,16.2663382 25.3827047,10.4894478 C25.4251249,10.3026696 25.466419,10.1136228 25.5035836,9.91966086 C25.543376,9.71133135 25.5782882,9.50905133 25.6086957,9.31130843 C25.2745895,9.1328483 24.9164576,8.98161091 24.533174,8.85154675 Z" id="Shape"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- (c) 2005, 2016. Authorize.Net is a registered trademark of CyberSource Corporation -->
+                                        </div>
+                                        <div class="card-payment m-card-payment box">
+
+                                            <div class="row">
+                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="first_name_on_card" name="first_name_on_card" placeholder="First name">
+                                                </div>
+                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="last_name_on_card" name="last_name_on_card" placeholder="Last name">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                                    <input id="card_number" name="card_number" class="form-control address_info card-number" type="text" size="30" placeholder="Card number" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <label><b>EXPIRATION MONTH</b></label>
+                                                    <div class="select-style field field--required">
+                                                        <select class="address_info province" id="month" name="month">
+                                                            <option value="">Select month</option>
+                                                            <option value="01">01 (JANUARY)</option>
+                                                            <option value="02">02 (FEBUARY)</option>
+                                                            <option value="03">03 (MARCH)</option>
+                                                            <option value="04">04 (APRIL)</option>
+                                                            <option value="05">05 (MAY)</option>
+                                                            <option value="06">06 (JUNE)</option>
+                                                            <option value="07">07 (JULY)</option>
+                                                            <option value="08">08 (AUGUST)</option>
+                                                            <option value="09">09 (SEPTEMBER)</option>
+                                                            <option value="10">10 (OCTOBER)</option>
+                                                            <option value="11">11 (NOVEMBER)</option>
+                                                            <option value="12">12 (DECEMBER)</option>
+                                                        </select>
+                                                    </div>
+                                                    <label id="month-error" class="error" for="month" style="display:none;"></label>
+                                                </div>
+                                                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <label><b>EXPIRATION YEAR</b></label>
+                                                    <div class="select-style field field--required">
+                                                        <select class="address_info province" id="year" name="year">
+                                                            <option value="">Select year</option>
+                                                            <option data-code="3919" value="2017"> 2017 </option>
+                                                            <option data-code="3919" value="2018"> 2018 </option>
+                                                            <option data-code="3919" value="2019"> 2019 </option>
+                                                            <option data-code="3919" value="2020"> 2020 </option>
+                                                            <option data-code="3919" value="2021"> 2021 </option>
+                                                            <option data-code="3919" value="2022"> 2022 </option>
+                                                            <option data-code="3919" value="2023"> 2023 </option>
+                                                            <option data-code="3919" value="2024"> 2024 </option>
+                                                            <option data-code="3919" value="2025"> 2025 </option>
+                                                            <option data-code="3919" value="2026"> 2026 </option>
+                                                            <option data-code="3919" value="2027"> 2027 </option>
+                                                        </select>
+                                                    </div>
+                                                    <label id="year-error" class="error" for="year" style="display:none;"></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="cvv" name="cvv" placeholder="CVV">
+                                                </div>
+                                            </div>
+                                            <div class="form-section-title marginbot_80">
+                                                <input type="hidden" id="billing_checkbox" name="billing_checkbox" value="1">
+                                                <input class="checkbox-custom billing-checkbox" type="checkbox" name="check_billing_address" onclick="show_billing_address()" value="1" id="check_billing_address" checked="">
+                                                <label for="check_billing_address" class="checkbox-custom-label"><b>My shipping and billing addresses are the same</b></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Payment col ends -->
+                                <!-- Billing col starts -->
+                                <div class="form-section billing-section" id="billing_info">
+                                    <div class="form-section-title margintop_60">
+                                        <!--<span class="step-number">4</span>-->
+                                        <h3>Billing</h3>
+                                        <p class="form-subhead-bdr"></p>
+                                    </div>
+                                    <div class="form-content">
+                                        <div class="form-group field field--required">
+                                            <input id="billing_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="billing_address" autocomplete="shipping address-line1">
+                                            <input id="street_number" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="street_number" autocomplete="shipping address-line1">
+                                            <input id="route" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="route" autocomplete="shipping address-line1">
+                                        </div>
+                                        <div class="form-group field field--optional">
+                                            <input id="billing_apt" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="billing_apt" autocomplete="shipping address-line2">
+                                        </div>
+                                        <div class="form-group field field--optional">
+                                            <label><b>State</b></label>
+                                            <div id="content" class="form-group field field--optional">
+                                                <div class="form-group field field--required">
+                                                    <div class="select-style">
+                                                        <select placeholder="Ontario" name="billing_state" id="billing_state" class="address_info province">
+                                                            <option value="">Select State</option>
+
+                                                            <option value="Alabama" data-code="3919">
+                                                                Alabama </option>
+
+                                                            <option value="Alaska" data-code="3920">
+                                                                Alaska </option>
+
+                                                            <option value="Arizona" data-code="3921">
+                                                                Arizona </option>
+
+                                                            <option value="Arkansas" data-code="3922">
+                                                                Arkansas </option>
+
+                                                            <option value="California" data-code="3924">
+                                                                California </option>
+
+                                                            <option value="Colorado" data-code="3926">
+                                                                Colorado </option>
+
+                                                            <option value="Connecticut" data-code="3927">
+                                                                Connecticut </option>
+
+                                                            <option value="Delaware" data-code="3928">
+                                                                Delaware </option>
+
+                                                            <option value="Florida" data-code="3930">
+                                                                Florida </option>
+
+                                                            <option value="Georgia" data-code="3931">
+                                                                Georgia </option>
+
+                                                            <option value="Hawaii" data-code="3932">
+                                                                Hawaii </option>
+
+                                                            <option value="Idaho" data-code="3933">
+                                                                Idaho </option>
+
+                                                            <option value="Illinois" data-code="3934">
+                                                                Illinois </option>
+
+                                                            <option value="Indiana" data-code="3935">
+                                                                Indiana </option>
+
+                                                            <option value="Iowa" data-code="3936">
+                                                                Iowa </option>
+
+                                                            <option value="Kansas" data-code="3937">
+                                                                Kansas </option>
+
+                                                            <option value="Kentucky" data-code="3938">
+                                                                Kentucky </option>
+
+                                                            <option value="Louisiana" data-code="3939">
+                                                                Louisiana </option>
+
+                                                            <option value="Maine" data-code="3941">
+                                                                Maine </option>
+
+                                                            <option value="Maryland" data-code="3942">
+                                                                Maryland </option>
+
+                                                            <option value="Massachusetts" data-code="3943">
+                                                                Massachusetts </option>
+
+                                                            <option value="Michigan" data-code="3945">
+                                                                Michigan </option>
+
+                                                            <option value="Minnesota" data-code="3946">
+                                                                Minnesota </option>
+
+                                                            <option value="Mississippi" data-code="3947">
+                                                                Mississippi </option>
+
+                                                            <option value="Missouri" data-code="3948">
+                                                                Missouri </option>
+
+                                                            <option value="Montana" data-code="3949">
+                                                                Montana </option>
+
+                                                            <option value="Nebraska" data-code="3950">
+                                                                Nebraska </option>
+
+                                                            <option value="Nevada" data-code="3951">
+                                                                Nevada </option>
+
+                                                            <option value="New Hampshire" data-code="3952">
+                                                                New Hampshire </option>
+
+                                                            <option value="New Jersey" data-code="3953">
+                                                                New Jersey </option>
+
+                                                            <option value="New Mexico" data-code="3955">
+                                                                New Mexico </option>
+
+                                                            <option value="New York" data-code="3956">
+                                                                New York </option>
+
+                                                            <option value="North Carolina" data-code="3957">
+                                                                North Carolina </option>
+
+                                                            <option value="North Dakota" data-code="3958">
+                                                                North Dakota </option>
+
+                                                            <option value="Ohio" data-code="3959">
+                                                                Ohio </option>
+
+                                                            <option value="Oklahoma" data-code="3960">
+                                                                Oklahoma </option>
+
+                                                            <option value="Oregon" data-code="3962">
+                                                                Oregon </option>
+
+                                                            <option value="Pennsylvania" data-code="3963">
+                                                                Pennsylvania </option>
+
+                                                            <option value="Rhode Island" data-code="3965">
+                                                                Rhode Island </option>
+
+                                                            <option value="South Carolina" data-code="3966">
+                                                                South Carolina </option>
+
+                                                            <option value="South Dakota" data-code="3967">
+                                                                South Dakota </option>
+
+                                                            <option value="Tennessee" data-code="3969">
+                                                                Tennessee </option>
+
+                                                            <option value="Texas" data-code="3970">
+                                                                Texas </option>
+
+                                                            <option value="Utah" data-code="3972">
+                                                                Utah </option>
+
+                                                            <option value="Vermont" data-code="3973">
+                                                                Vermont </option>
+
+                                                            <option value="Virginia" data-code="3974">
+                                                                Virginia </option>
+
+                                                            <option value="Washington" data-code="3975">
+                                                                Washington </option>
+
+                                                            <option value="West Virginia" data-code="3976">
+                                                                West Virginia </option>
+
+                                                            <option value="Wisconsin" data-code="3977">
+                                                                Wisconsin </option>
+
+                                                            <option value="Wyoming" data-code="3978">
+                                                                Wyoming </option>
+                                                        </select>
+                                                    </div>
+                                                    <label id="billing_state-error" class="error" for="billing_state" style="display:none;"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                                                <input id="billing_city" class="form-control address_info" type="text" placeholder="City" size="30" name="billing_city" autocomplete="shipping locality">
+                                            </div>
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
+                                                <input id="billing_postcode" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="billing_postcode" data-zip-field="1" autocomplete="shipping postal-code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Billing col ends-->
+                                <div class="form-checkboxes">
+                                    <div class="nl">
+                                        <input type="hidden" id="news_letter" name="news_letter" value="1">
+                                        <input class="checkbox-custom nl-checkbox" type="checkbox" name="newsletter" onclick="checked_newsletter()" value="1" id="newsletter" checked="">
+                                        <label for="newsletter" class="checkbox-custom-label"><b>RECEIVE OUR MONTHLY NEWSLETTER</b></label>
+                                    </div>
+                                </div>
+                                <div class="form-checkboxes marginbot_30">
+                                    <div class="ts">
+                                        <input type="hidden" id="terms_conditions" name="terms_conditions" value="1">
+                                        <input class="checkbox-custom tc-checkbox" type="checkbox" name="terms_and_conditions" onclick="checked_terms_condition()" value="" id="terms_and_conditions">
+                                        <span for="terms_and_conditions" class="checkbox-custom-label tc-text"></span>
+                                        <label for="terms_and_conditions" class="checkbox-custom-label"><b>I ACCEPT THE TERMS AND CONDITIONS</b> </label>
+                                        <label id="terms_and_conditions-error" class="error" for="terms_and_conditions" style="display:none;"></label>
+                                    </div>
+                                </div>
+                                <div class="row form-total">
+                                    <div class="col-md-9 col-sm-9">
+                                        <p>TOTAL(USD)</p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <p class="order_total">$119.75</p>
+                                    </div>
+                                </div>
+                                <div id="end_of_row"></div>
+                            </div>
+                            <!--Right Column-->
+                            <div id="cart_div" class="col-lg-4 col-md-4 col-sm-4">
+                                <style>
+                                    .fixed-position {
+                                        position: fixed;
+                                        top: 30px;
+                                        width: 26%;
+                                    }
+
+                                    .ipad-portrait {
+                                        position: fixed;
+                                        top: 20px;
+                                        width: 29.5%;
+                                    }
+
+                                    .ipad-landscape {
+                                        position: fixed;
+                                        top: 20px;
+                                        width: 31%;
+                                    }
+                                </style>
+                                <!--------- Cart design -------------------->
+                                <div class="cart-container follow-scroll margin_bottom">
+                                    <div class="cart-heading">
+                                        <h3>Order Summary</h3>
+                                        <hr>
+                                    </div>
+
+                                    <div class="cart-content">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <p>3 x Monthly Supply</p>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 right-column">
+                                                <p>$135</p>
+                                            </div>
+                                        </div>
+                                        <!--discount div-->
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                                <p>15% Discount</p>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 right-column">
+                                                <p>-$20.25</p>
+                                            </div>
+                                        </div>
+                                        <!--discount div ends -->
+                                        <!-- shipping div starts ---->
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-8 col-sm-7 col-xs-7">
+                                                <p>Shipping</p>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5 right-column">
+                                                <p>$5</p>
+                                            </div>
+                                        </div>
+                                        <!-- shipping div ends ---->
+                                        <!--tax div-->
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-8 col-sm-7 col-xs-9">
+                                                <p>Sales tax </p>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-3 right-column">
+                                                <p>$0</p>
+                                            </div>
+                                        </div>
+                                        <!--tax div ends -->
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <div class="price-total">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-7 col-xs-7">
+                                                    <p class="text-violet">TOTAL(USD)</p>
+                                                </div>
+                                                <div class="col-md-4 col-sm-5 col-xs-5 right-column">
+                                                    <p class="text-violet">$119.75</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <!--submit buttons-->
+                                <button class="btn card-payment" type="submit" name="place_order" id="btn_submit">CONFIRM PURCHASE</button>
+                                <button class="btn paypal-payment" type="submit" name="go_to_paypal" id="btn_paypal">GO TO PAYPAL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!--script starts here-->
+            <script>
+                //scroll to payment_div after getting error message
+            </script>
+            
+            <script>
+                function checkup() {
+                    $("#postal_code").focus();
+                }
+
+                var first_name, last_name;
+                $("#first_name").on('input', function() {
+                    first_name = $("#first_name").val();
+                    $("#first_name_on_card").val(first_name);
+                });
+
+                $("#last_name").on('input', function() {
+                    last_name = $("#last_name").val();
+                    $("#last_name_on_card").val(last_name);
+                });
+            </script>
+            <!--script ends here-->
         </div>
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-N5ZHT2M');
+        </script>
+        <!-- End Google Tag Manager -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5ZHT2M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
     </div>
-    <div class="checkout-intro container" id="checkout-intro">
-      <h1>Subscribe Today</h1>
-    </div>
-    
-      <!-- Checkout Body Content -->
-  </div>
 
-  {{home-footer}}
+    {{home-footer}}
 
-  <script type="text/javascript">
-      $(document).ready(function(){
-          if (!$('body').hasClass('landing-page')){
-              $('body').addClass('landing-page')
+    <script type="text/javascript">
+
+      //Declare neccessary variables
+      var scrollTop, header_height, index_height, page_div_height, buy_box_height, chkout_height, overall_height;
+
+      $(document).ready(function(e) {
+          if ($('body').hasClass('landing-page')){
+              $('body').removeClass('landing-page')
           }
+
+          var $scrollTopBtn = $('#scrollTop-btn');
+          var $panelToggle = $('.panel-toggle');
+          $panelToggle.click(function(e) {
+              $(this).toggleClass('active');
+              var $target = $(this).attr('href');
+              $($target).toggleClass('expanded');
+              e.preventDefault();
+          });
+          $scrollTopBtn.click(function() {
+              $('html, body').animate({
+                  scrollTop: 0
+              }, {
+                  duration: 700,
+                  easing: "easeOutExpo"
+              });
+          });
+
+          //update total amount above the purchase button
+          $('.order_total').html('$119.75');
+          //get height of the divs
+          header_height = $('#site-header').height();
+          index_height = $('#index-sections').height();
+          page_div_height = $('#page-div').height();
+          buy_box_height = $('#buy-box').height();
+          chkout_height = $('#checkout-intro').height();
+          overall_height = header_height + index_height + page_div_height + buy_box_height + chkout_height + 130;
       });
-  </script>
+
+      var mql = window.matchMedia("screen and (min-width:315px) and (max-width:767px)");
+      var window_width = $(window).width();
+      //scrolling cart info div
+
+    </script>
