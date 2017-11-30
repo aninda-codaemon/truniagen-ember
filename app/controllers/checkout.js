@@ -4,6 +4,9 @@ export default Ember.Controller.extend({
     actions: {
         updateBottleTypeChange: function(data){
             console.log('Bottle Type: ', data);
+        },
+        submitFormValidation: function(){
+            console.log('Form submit');
         }
     }
 });

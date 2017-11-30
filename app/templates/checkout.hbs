@@ -95,7 +95,7 @@
             <section class="checkout-content">
                 <div class="container">
                     <div class="row">
-                        <form id="frm_addcust" method="post" action="https://app.truniagen.com/checkout/get_customer_info" enctype="multipart/form-data" novalidate="novalidate">
+                        <form id="frm_addcust" method="post" enctype="multipart/form-data" novalidate="novalidate">
                             <!--Left Column-->
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <!--plan col starts-->
@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                <input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value="">
+                                                {{input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value="first_name"}}
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                 <input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value="">
@@ -860,7 +860,7 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <!--submit buttons-->
-                                <button class="btn card-payment" type="submit" name="place_order" id="btn_submit">CONFIRM PURCHASE</button>
+                                <button {{action "submitFormValidation"}} class="btn card-payment" type="button" name="place_order" id="btn_submit">CONFIRM PURCHASE</button>
                                 <button class="btn paypal-payment" type="submit" name="go_to_paypal" id="btn_paypal">GO TO PAYPAL</button>
                             </div>
                         </form>
