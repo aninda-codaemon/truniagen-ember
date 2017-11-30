@@ -113,7 +113,7 @@
                                         <div class="form-group">
                                             <label><b>How many bottles would you like?</b></label>
                                             <div class="select-style field field--required">
-                                                <select autocomplete="bottletype" data-country-field="1" name="bottletype" id="bottletype" class="address_info country" onchange="update_cart(&#39;apply_product_price&#39;);">
+                                                <select onchange={{action "updateBottleTypeChange" value="target.value"}} autocomplete="bottletype" data-country-field="1" name="bottletype" id="bottletype" class="address_info country" ondblclick="update_cart('apply_product_price');">
                                                     <option value="1">1 Bottle (1 month supply)</option>
                                                     <option value="3" selected="">3 Bottles (3 months supply) - save 15%</option>
                                                     <option value="6">6 Bottles (6 months supply) - save 20%</option>
@@ -871,7 +871,7 @@
             <script>
                 //scroll to payment_div after getting error message
             </script>
-            
+
             <script>
                 function checkup() {
                     $("#postal_code").focus();
