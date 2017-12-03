@@ -156,24 +156,38 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                {{input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value="first_name"}}
+                                                {{input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value=first_name}}
+                                                {{#if isValidFname}}
+                                                {{else}}
+                                                <label id="first_name-error" class="error" for="first_name">Enter your first name</label>
+                                                {{/if}}
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                <input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value="">
+                                                {{input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value=last_name}}
+                                                {{#if isValidLname}}{{else}}
+                                                <label id="last_name-error" class="error" for="last_name">Enter your last name</label>
+                                                {{/if}}
                                             </div>
                                         </div>
                                         <div class="form-group field field--required">
-                                            <input id="street_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="address" autocomplete="shipping address-line1" value="" onblur="checkup()">
+                                            {{input id="street_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="address" autocomplete="shipping address-line1" value=address onblur="checkup()"}}
+                                            {{#if isValidAddress}}{{else}}
+                                            <label id="street_address-error" class="error" for="street_address">Enter your shipping address</label>
+                                            {{/if}}
                                         </div>
                                         <div class="form-group field field--optional">
-                                            <input id="alternate_address" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="alternate_address" autocomplete="shipping address-line2" value="">
+                                            {{input id="alternate_address" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="alternate_address" autocomplete="shipping address-line2" value=alternate_address}}
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
-                                                <input id="locality" class="form-control address_info" type="text" placeholder="City" size="30" name="city" autocomplete="shipping locality" value="">
+                                                {{input id="locality" class="form-control address_info" type="text" placeholder="City" size="30" name="city" autocomplete="shipping locality" value=city}}
+                                                <label id="locality-error" class="error" for="locality">Enter your city name</label>
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
-                                                <input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value="" onblur="update_cart(&#39;apply_tax&#39;)">
+                                                {{input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value=postcode onblur="update_cart('apply_tax')"}}
+                                                {{#if isValidZip}}{{else}}
+                                                <label id="postal_code-error" class="error" for="postal_code">Enter zip code</label>
+                                                {{/if}}
                                             </div>
                                         </div>
                                         <div class="form-group field field--optional">
@@ -182,7 +196,7 @@
 
                                                 <div class="form-group field field--required">
                                                     <div class="select-style">
-                                                        <select placeholder="Ontario" name="state" id="administrative_area_level_1" class="address_info province">
+                                                        <select {{action "updateStateSelect" value="target.value"}} placeholder="Ontario" name="state" id="administrative_area_level_1" class="address_info province">
                                                             <option value="">Select State</option>
 
                                                             <option value="Alabama" data-code="3919">
@@ -336,16 +350,21 @@
                                                                 Wyoming </option>
                                                         </select>
                                                     </div>
-                                                    <label id="state-error" class="error" for="state" style="display:none;"></label>
+                                                    {{#if isValidState}}{{else}}
+                                                    <label id="state-error" class="error" for="administrative_area_level_1" style="">Select state</label>
+                                                    {{/if}}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
-                                                <input id="email" class="form-control customer_email" type="email" name="email" placeholder="Email" value="">
+                                                {{input id="email" class="form-control customer_email" type="email" name="email" placeholder="Email" value=email}}
+                                                {{#if isValidEmail}}{{else}}
+                                                <label id="email-error" class="error" for="email">Enter your email address</label>
+                                                {{/if}}
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                <input id="phone_number" class="form-control" type="text" placeholder="Phone number" name="phone_number" value="">
+                                                {{input id="phone_number" class="form-control" type="text" placeholder="Phone number" name="phone_number" value=phone_number}}
                                             </div>
                                         </div>
                                     </div>
@@ -487,15 +506,24 @@
 
                                             <div class="row">
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="first_name_on_card" name="first_name_on_card" placeholder="First name">
+                                                    {{input class="form-control address_info" type="text" size="30" autocomplete="off" id="first_name_on_card" name="first_name_on_card" value=first_name_on_card placeholder="First name"}}
+                                                    {{#if isValidFCname}}{{else}}
+                                                    <label id="first_name_on_card-error" class="error" for="first_name_on_card">Enter your first name as shown on card</label>
+                                                    {{/if}}
                                                 </div>
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="last_name_on_card" name="last_name_on_card" placeholder="Last name">
+                                                    {{input class="form-control address_info" type="text" size="30" autocomplete="off" id="last_name_on_card" name="last_name_on_card" placeholder="Last name" value=last_name_on_card}}
+                                                    {{#if isValidLCname}}{{else}}
+                                                    <label id="last_name_on_card-error" class="error" for="last_name_on_card">Enter your last name as shown on card</label>
+                                                    {{/if}}
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                                    <input id="card_number" name="card_number" class="form-control address_info card-number" type="text" size="30" placeholder="Card number" autocomplete="off">
+                                                    {{input id="card_number" name="card_number" class="form-control address_info card-number" type="text" size="30" placeholder="Card number" autocomplete="off" value=card_number}}
+                                                    {{#if isValidCC}}{{else}}
+                                                    <label id="card_number-error" class="error" for="card_number">Enter your credit card number</label>
+                                                    {{/if}}
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -518,7 +546,7 @@
                                                             <option value="12">12 (DECEMBER)</option>
                                                         </select>
                                                     </div>
-                                                    <label id="month-error" class="error" for="month" style="display:none;"></label>
+                                                    <label id="month-error" class="error" for="month" style="">Select expiry month</label>
                                                 </div>
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                     <label><b>EXPIRATION YEAR</b></label>
@@ -538,12 +566,15 @@
                                                             <option data-code="3919" value="2027"> 2027 </option>
                                                         </select>
                                                     </div>
-                                                    <label id="year-error" class="error" for="year" style="display:none;"></label>
+                                                    <label id="year-error" class="error" for="year" style="">Select expiry year</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                    <input class="form-control address_info" type="text" size="30" autocomplete="off" id="cvv" name="cvv" placeholder="CVV">
+                                                    {{input class="form-control address_info" type="text" size="30" autocomplete="off" id="cvv" name="cvv" placeholder="CVV" value=cvv}}
+                                                    {{#if isValidCvvC}}{{else}}
+                                                    <label id="cvv-error" class="error" for="cvv">Enter your CVV as shown on your card</label>
+                                                    {{/if}}
                                                 </div>
                                             </div>
                                             <div class="form-section-title marginbot_80">
@@ -564,12 +595,14 @@
                                     </div>
                                     <div class="form-content">
                                         <div class="form-group field field--required">
-                                            <input id="billing_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="billing_address" autocomplete="shipping address-line1">
-                                            <input id="street_number" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="street_number" autocomplete="shipping address-line1">
-                                            <input id="route" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="route" autocomplete="shipping address-line1">
+                                            {{input id="billing_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="billing_address" autocomplete="shipping address-line1" value=billing_address}}
+                                            <label id="billing_address-error" class="error" for="billing_address">Enter your billing address</label>
+
+                                            {{input id="street_number" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="street_number" autocomplete="shipping address-line1" value=street_number}}
+                                            {{input id="route" class="form-control address_info" type="hidden" size="30" placeholder="Address line 1" name="route" autocomplete="shipping address-line1" value=route}}
                                         </div>
                                         <div class="form-group field field--optional">
-                                            <input id="billing_apt" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="billing_apt" autocomplete="shipping address-line2">
+                                            {{input id="billing_apt" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="billing_apt" autocomplete="shipping address-line2" value=billing_apt}}
                                         </div>
                                         <div class="form-group field field--optional">
                                             <label><b>State</b></label>
@@ -730,16 +763,18 @@
                                                                 Wyoming </option>
                                                         </select>
                                                     </div>
-                                                    <label id="billing_state-error" class="error" for="billing_state" style="display:none;"></label>
+                                                    <label id="billing_state-error" class="error" for="billing_state" style="">Select state</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
-                                                <input id="billing_city" class="form-control address_info" type="text" placeholder="City" size="30" name="billing_city" autocomplete="shipping locality">
+                                                {{input id="billing_city" class="form-control address_info" type="text" placeholder="City" size="30" name="billing_city" autocomplete="shipping locality" value=billing_city}}
+                                                <label id="billing_city-error" class="error" for="billing_city">Enter your city name</label>
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
-                                                <input id="billing_postcode" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="billing_postcode" data-zip-field="1" autocomplete="shipping postal-code">
+                                                {{input id="billing_postcode" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="billing_postcode" data-zip-field="1" autocomplete="shipping postal-code" value=billing_postcode}}
+                                                <label id="billing_postcode-error" class="error" for="billing_postcode">Enter zip code</label>
                                             </div>
                                         </div>
                                     </div>
@@ -758,7 +793,7 @@
                                         <input class="checkbox-custom tc-checkbox" type="checkbox" name="terms_and_conditions" onclick="checked_terms_condition()" value="" id="terms_and_conditions">
                                         <span for="terms_and_conditions" class="checkbox-custom-label tc-text"></span>
                                         <label for="terms_and_conditions" class="checkbox-custom-label"><b>I ACCEPT THE TERMS AND CONDITIONS</b> </label>
-                                        <label id="terms_and_conditions-error" class="error" for="terms_and_conditions" style="display:none;"></label>
+                                        <label id="terms_and_conditions-error" class="error" for="terms_and_conditions" style="">Accept terms and conditions</label>
                                     </div>
                                 </div>
                                 <div class="row form-total">
