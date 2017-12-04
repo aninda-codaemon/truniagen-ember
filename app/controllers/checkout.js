@@ -41,7 +41,7 @@ export default Ember.Controller.extend({
         },
         updateBottleTypeChange: function(data){
             console.log('Bottle Type: ', data);
-            $.post('http://localhost/prohealthspan/checkout/update_cart', {quantity: 6, recurring: 0, state_name: "", postcode: ""}).done(function(result){
+            $.post('http://localhost/prohealthspan/checkout/update_cart', {bottletype: 6, action: 'apply_product_price'}).done(function(result){
                 console.log(result);
             })
         },
