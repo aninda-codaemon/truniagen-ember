@@ -157,23 +157,19 @@
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                 {{input id="first_name" class="form-control address_info" type="text" size="30" placeholder="First Name" name="first_name" autocomplete="shipping given-name" value=first_name}}
-                                                {{#if isValidFname}}
-                                                {{else}}
-                                                <label id="first_name-error" class="error" for="first_name">Enter your first name</label>
-                                                {{/if}}
+                                                <label id="first_name-error" class="error" for="first_name" style="display: none;">Enter your first name</label>
+
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                 {{input id="last_name" class="form-control address_info" type="text" size="30" placeholder="Last Name" name="last_name" autocomplete="shipping family-name" value=last_name}}
-                                                {{#if isValidLname}}{{else}}
-                                                <label id="last_name-error" class="error" for="last_name">Enter your last name</label>
-                                                {{/if}}
+                                                <label id="last_name-error" class="error" for="last_name" style="display: none;">Enter your last name</label>
+
                                             </div>
                                         </div>
                                         <div class="form-group field field--required">
                                             {{input id="street_address" class="form-control address_info" type="text" size="30" placeholder="Address line 1" name="address" autocomplete="shipping address-line1" value=address onblur="checkup()"}}
-                                            {{#if isValidAddress}}{{else}}
-                                            <label id="street_address-error" class="error" for="street_address">Enter your shipping address</label>
-                                            {{/if}}
+                                            <label id="street_address-error" class="error" for="street_address" style="display: none;">Enter your shipping address</label>
+
                                         </div>
                                         <div class="form-group field field--optional">
                                             {{input id="alternate_address" class="form-control address_info" type="text" size="30" placeholder="Address line 2 (optional)" name="alternate_address" autocomplete="shipping address-line2" value=alternate_address}}
@@ -181,7 +177,8 @@
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
                                                 {{input id="locality" class="form-control address_info" type="text" placeholder="City" size="30" name="city" autocomplete="shipping locality" value=city}}
-                                                <label id="locality-error" class="error" for="locality">Enter your city name</label>
+                                                <label id="locality-error" class="error" for="locality" style="display: none;">Enter your city name</label>
+
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
                                                 {{input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value=postcode onblur="update_cart('apply_tax')"}}
@@ -196,7 +193,7 @@
 
                                                 <div class="form-group field field--required">
                                                     <div class="select-style">
-                                                        <select {{action "updateStateSelect" value="target.value"}} placeholder="Ontario" name="state" id="administrative_area_level_1" class="address_info province">
+                                                        <select onchange={{action "updateStateSelect" value="target.value"}} placeholder="Ontario" name="state" id="administrative_area_level_1" class="address_info province">
                                                             <option value="">Select State</option>
 
                                                             <option value="Alabama" data-code="3919">
@@ -579,13 +576,14 @@
                                             </div>
                                             <div class="form-section-title marginbot_80">
                                                 <input type="hidden" id="billing_checkbox" name="billing_checkbox" value="1">
-                                                <input class="checkbox-custom billing-checkbox" type="checkbox" name="check_billing_address" onclick="show_billing_address()" value="1" id="check_billing_address" checked="">
+                                                <input class="checkbox-custom billing-checkbox" type="checkbox" name="check_billing_address" value="1" id="check_billing_address" onchange={{action "toggleBillingAddress"}} checked={{isBillSameShip}}>
                                                 <label for="check_billing_address" class="checkbox-custom-label"><b>My shipping and billing addresses are the same</b></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Payment col ends -->
+
                                 <!-- Billing col starts -->
                                 <div class="form-section billing-section" id="billing_info">
                                     <div class="form-section-title margintop_60">
@@ -609,7 +607,7 @@
                                             <div id="content" class="form-group field field--optional">
                                                 <div class="form-group field field--required">
                                                     <div class="select-style">
-                                                        <select placeholder="Ontario" name="billing_state" id="billing_state" class="address_info province">
+                                                        <select onchange={{action "updateBStateSelect" value="target.value"}} placeholder="Ontario" name="billing_state" id="billing_state" class="address_info province">
                                                             <option value="">Select State</option>
 
                                                             <option value="Alabama" data-code="3919">
@@ -780,6 +778,7 @@
                                     </div>
                                 </div>
                                 <!--Billing col ends-->
+
                                 <div class="form-checkboxes">
                                     <div class="nl">
                                         <input type="hidden" id="news_letter" name="news_letter" value="1">
@@ -790,10 +789,12 @@
                                 <div class="form-checkboxes marginbot_30">
                                     <div class="ts">
                                         <input type="hidden" id="terms_conditions" name="terms_conditions" value="1">
-                                        <input class="checkbox-custom tc-checkbox" type="checkbox" name="terms_and_conditions" onclick="checked_terms_condition()" value="" id="terms_and_conditions">
+                                        <input class="checkbox-custom tc-checkbox" type="checkbox" name="terms_and_conditions" value="" checked={{isTermsConditions}} onchange={{action "checkTermsConditions"}} id="terms_and_conditions">
                                         <span for="terms_and_conditions" class="checkbox-custom-label tc-text"></span>
                                         <label for="terms_and_conditions" class="checkbox-custom-label"><b>I ACCEPT THE TERMS AND CONDITIONS</b> </label>
+                                        {{#if isTermsConditions}}{{else}}
                                         <label id="terms_and_conditions-error" class="error" for="terms_and_conditions" style="">Accept terms and conditions</label>
+                                        {{/if}}
                                     </div>
                                 </div>
                                 <div class="row form-total">
