@@ -34,8 +34,12 @@ export default Ember.Controller.extend({
     isValidZip: Ember.computed.and('isValidPcode', 'isPostcodeLong'),
     isValidState: Ember.computed.notEmpty('state'),
     isValidEmail: Ember.computed.match('email', /^.+@.+\..+$/),
-    isValidFCname: Ember.computed.match('first_name_on_card', /^[a-zA-Z]*$/),
-    isValidLCname: Ember.computed.match('last_name_on_card', /^[a-zA-Z]*$/),
+    isValidFCnameLen: Ember.computed.notEmpty('first_name_on_card'),
+    isValidFCnameChar: Ember.computed.match('first_name_on_card', /^[a-zA-Z]*$/),
+    isValidFCname: Ember.computed.and('isValidFCnameLen', 'isValidFCnameChar'),
+    isValidLCnameLen: Ember.computed.notEmpty('last_name_on_card'),
+    isValidLCnameChar: Ember.computed.match('last_name_on_card', /^[a-zA-Z]*$/),
+    isValidLCname: Ember.computed.match('isValidLCnameLen', 'isValidLCnameChar'),
     isValidCardNum: Ember.computed.match('card_number', /[0-9]/),
     isValidCardNumLong: Ember.computed.gte('card_number.length', 12),
     isValidCC: Ember.computed.and('isValidCardNum', 'isValidCardNumLong'),
@@ -108,7 +112,67 @@ export default Ember.Controller.extend({
                 Ember.$('#locality-error').show();
             }
 
-            
+            if (this.get('isValidZip')){
+                Ember.$('#postal_code-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#postal_code-error').show();
+            }
+
+            if (this.get('isValidState')){
+                Ember.$('#state-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#state-error').show();
+            }
+
+            if (this.get('isValidEmail')){
+                Ember.$('#email-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#email-error').show();
+            }
+
+            if (this.get('isValidEmail')){
+                Ember.$('#email-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#email-error').show();
+            }
+
+            if (this.get('isValidFCname')){
+                Ember.$('#first_name_on_card-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#first_name_on_card-error').show();
+            }
+
+            if (this.get('isValidLCname')){
+                Ember.$('#last_name_on_card-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#last_name_on_card-error').show();
+            }
+
+            if (this.get('isValidCC')){
+                Ember.$('#card_number-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#card_number-error').show();
+            }
+
+            if (this.get('isValidCC')){
+                Ember.$('#card_number-error').hide();
+            }else{
+                flag += 1;
+                Ember.$('#card_number-error').show();
+            }
+
+            if (flag===0){
+                console.log('Form has submit and ajax call');
+            }else {
+                console.log('Form has errors');
+            }
         }
     }
 });

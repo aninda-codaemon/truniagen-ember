@@ -182,9 +182,8 @@
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
                                                 {{input id="postal_code" class="form-control postal-code address_info" type="text" size="30" placeholder="Zip Code" name="postcode" data-zip-field="1" autocomplete="shipping postal-code" value=postcode onblur="update_cart('apply_tax')"}}
-                                                {{#if isValidZip}}{{else}}
-                                                <label id="postal_code-error" class="error" for="postal_code">Enter zip code</label>
-                                                {{/if}}
+                                                <label id="postal_code-error" class="error" for="postal_code" style="display: none;">Enter zip code</label>
+
                                             </div>
                                         </div>
                                         <div class="form-group field field--optional">
@@ -347,18 +346,16 @@
                                                                 Wyoming </option>
                                                         </select>
                                                     </div>
-                                                    {{#if isValidState}}{{else}}
-                                                    <label id="state-error" class="error" for="administrative_area_level_1" style="">Select state</label>
-                                                    {{/if}}
+                                                    <label id="state-error" class="error" for="administrative_area_level_1" style="display: none;">Select state</label>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6 field field--required">
                                                 {{input id="email" class="form-control customer_email" type="email" name="email" placeholder="Email" value=email}}
-                                                {{#if isValidEmail}}{{else}}
-                                                <label id="email-error" class="error" for="email">Enter your email address</label>
-                                                {{/if}}
+                                                <label id="email-error" class="error" for="email" style="display: none;">Enter your email address</label>
+
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                 {{input id="phone_number" class="form-control" type="text" placeholder="Phone number" name="phone_number" value=phone_number}}
@@ -504,23 +501,20 @@
                                             <div class="row">
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                     {{input class="form-control address_info" type="text" size="30" autocomplete="off" id="first_name_on_card" name="first_name_on_card" value=first_name_on_card placeholder="First name"}}
-                                                    {{#if isValidFCname}}{{else}}
-                                                    <label id="first_name_on_card-error" class="error" for="first_name_on_card">Enter your first name as shown on card</label>
-                                                    {{/if}}
+                                                    <label id="first_name_on_card-error" class="error" for="first_name_on_card" style="display: none;">Enter your first name as shown on card</label>
+
                                                 </div>
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                                     {{input class="form-control address_info" type="text" size="30" autocomplete="off" id="last_name_on_card" name="last_name_on_card" placeholder="Last name" value=last_name_on_card}}
-                                                    {{#if isValidLCname}}{{else}}
-                                                    <label id="last_name_on_card-error" class="error" for="last_name_on_card">Enter your last name as shown on card</label>
-                                                    {{/if}}
+                                                    <label id="last_name_on_card-error" class="error" for="last_name_on_card" style="display: none;">Enter your last name as shown on card</label>
+
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                                     {{input id="card_number" name="card_number" class="form-control address_info card-number" type="text" size="30" placeholder="Card number" autocomplete="off" value=card_number}}
-                                                    {{#if isValidCC}}{{else}}
-                                                    <label id="card_number-error" class="error" for="card_number">Enter your credit card number</label>
-                                                    {{/if}}
+                                                    <label id="card_number-error" class="error" for="card_number" style="display: none;">Enter your credit card number</label>
+
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -543,7 +537,7 @@
                                                             <option value="12">12 (DECEMBER)</option>
                                                         </select>
                                                     </div>
-                                                    <label id="month-error" class="error" for="month" style="">Select expiry month</label>
+                                                    <label id="month-error" class="error" for="month" style="display: none;">Select expiry month</label>
                                                 </div>
                                                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                                     <label><b>EXPIRATION YEAR</b></label>
